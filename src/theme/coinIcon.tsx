@@ -3,7 +3,7 @@ import {Icons} from '../assets';
 import {SvgProps} from 'react-native-svg';
 import {scale} from 'react-native-size-matters';
 
-const ICON_SIZE = 48;
+const ICON_SIZE = 50;
 
 const icons: any = {
   'usd-coin': Icons.USDC,
@@ -12,11 +12,11 @@ const icons: any = {
   bitcoin: Icons.BTC,
   'matic-network': Icons.MATIC,
   solana: Icons.SOL,
-  cardano: Icons.CardIcon,
+  cardano: Icons.ADA,
   polkadot: Icons.DOT,
 };
 
-type IconName =
+export type IconName =
   | 'usd-coin'
   | 'tether'
   | 'dai'

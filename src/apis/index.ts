@@ -2,7 +2,7 @@ import {create} from 'apisauce';
 
 const BASE_URL = 'https://api.coingecko.com/api/v3';
 
-const coinIds = [
+export const coinIds = [
   'usd-coin',
   'tether',
   'dai',
@@ -11,7 +11,7 @@ const coinIds = [
   'solana',
   'cardano',
   'polkadot',
-];
+] as const;
 
 const IDS = coinIds.join();
 

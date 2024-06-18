@@ -38,23 +38,38 @@ export const theme = createTheme({
   },
   textVariants: {
     header: {
-      fontWeight: 'bold',
-      fontSize: scale(34),
+      fontWeight: '900',
+      fontSize: scale(18),
+      lineHeight: scale(23),
+    },
+    coinTitle: {
+      fontWeight: '600',
+      fontSize: scale(16),
+      lineHeight: scale(26),
+      fontFamily: Fonts.Regular,
+    },
+    coinBody: {
+      fontWeight: '400',
+      fontSize: scale(14),
+      fontFamily: Fonts.Regular,
     },
     body: {
-      fontSize: 16,
-      lineHeight: 24,
+      fontWeight: '600',
+      fontSize: scale(14),
+      lineHeight: scale(25),
+      fontFamily: Fonts.Regular,
     },
     defaults: {
       // We can define a default text variant here.
       fontWeight: '400',
       fontSize: scale(12),
-      lineHeight: scale(15),
-      color: 'white',
+      lineHeight: scale(18),
       fontFamily: Fonts.Regular,
     },
   },
-  scrollViewVariants: {},
+  scrollViewVariants: {
+    defaults: {},
+  },
 });
 
 export type Theme = typeof theme;

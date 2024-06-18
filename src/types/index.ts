@@ -1,3 +1,6 @@
+import {coinIds} from '../apis';
+import {palette} from '../theme';
+
 export interface Sparkline {
   price: Array<number>;
 }
@@ -31,3 +34,67 @@ export interface CoinData {
   last_updated: string;
   sparkline_in_7d: Sparkline;
 }
+
+export interface CoinDerived {
+  minTitle: string;
+  expandTitle: string;
+  expandDesc: string;
+  color: string;
+}
+
+export type CoinIdsType = (typeof coinIds)[number];
+
+export type CoinNames = {
+  [key in (typeof coinIds)[number]]: CoinDerived;
+};
+
+export const coinNames: CoinNames = {
+  bitcoin: {
+    minTitle: 'Bitcoin',
+    expandTitle: 'Bitcoin',
+    expandDesc: 'BTC',
+    color: palette.bitcoinColor,
+  },
+  'usd-coin': {
+    minTitle: 'USD Coin',
+    expandTitle: 'USDC',
+    expandDesc: 'USD coin',
+    color: palette.usdcColor,
+  },
+  tether: {
+    minTitle: 'Tether',
+    expandTitle: 'USDT',
+    expandDesc: 'Tether',
+    color: palette.usdtColor,
+  },
+  dai: {
+    minTitle: 'DAI',
+    expandTitle: 'DAI',
+    expandDesc: 'DAI',
+    color: palette.daiColor,
+  },
+  'matic-network': {
+    minTitle: 'Polygon',
+    expandTitle: 'MATIC',
+    expandDesc: 'Polygon',
+    color: palette.polygonColor,
+  },
+  solana: {
+    minTitle: 'Solana',
+    expandTitle: 'SOL',
+    expandDesc: 'Solana',
+    color: palette.solanaColor,
+  },
+  cardano: {
+    minTitle: 'Cardano',
+    expandTitle: 'ADA',
+    expandDesc: 'Cardano',
+    color: palette.cardanoColor,
+  },
+  polkadot: {
+    minTitle: 'DOT',
+    expandTitle: 'Polka DOT',
+    expandDesc: 'DOT',
+    color: palette.dotColor,
+  },
+};
