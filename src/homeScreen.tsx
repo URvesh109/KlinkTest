@@ -1,7 +1,8 @@
 import React from 'react';
-import {fetchCoinList} from './apis';
+// import {fetchCoinList} from './apis';
 import {Portfolio} from './components';
 import {ScrollView, Text} from './theme';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
 const Home = () => {
   React.useEffect(() => {
@@ -16,12 +17,14 @@ const Home = () => {
   }, []);
 
   return (
-    <ScrollView nestedScrollEnabled={false}>
-      <Text variant={'coinTitle'} color={'daiColor'}>
-        USDC
-      </Text>
-      <Portfolio />
-    </ScrollView>
+    <BottomSheetModalProvider>
+      <ScrollView nestedScrollEnabled={false}>
+        <Text variant={'coinTitle'} color={'daiColor'}>
+          USDC
+        </Text>
+        <Portfolio />
+      </ScrollView>
+    </BottomSheetModalProvider>
   );
 };
 

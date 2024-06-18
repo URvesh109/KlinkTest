@@ -56,7 +56,7 @@ export const theme = createTheme({
     body: {
       fontWeight: '600',
       fontSize: scale(14),
-      lineHeight: scale(25),
+      lineHeight: scale(24),
       fontFamily: Fonts.Regular,
     },
     defaults: {

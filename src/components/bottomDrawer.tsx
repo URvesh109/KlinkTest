@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {
+  ForwardRefRenderFunction,
+  PropsWithChildren,
+  forwardRef,
+} from 'react';
 import {StyleSheet, Text} from 'react-native';
-import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
+import {BottomSheetModal, BottomSheetView} from '@gorhom/bottom-sheet';
 
-export const BottomDrawer = () => {
-  const bottomSheetModalRef = React.useRef<BottomSheet>(null);
+export type BottomDrawerPresentHandle = {
+  present: () => void;
+};
+
+type BottomDrawerProps = PropsWithChildren & {
+  selected: string;
+};
+
+const BottomDrawer: ForwardRefRenderFunction<
+  BottomDrawerPresentHandle,
+  BottomDrawerProps
+> = (props, forwardedRef) => {
+  const bottomSheetModalRef = React.useRef<BottomSheetModal>(null);
 
   const snapPoints = React.useMemo(() => ['25%', '50%'], []);
 
@@ -11,8 +26,14 @@ export const BottomDrawer = () => {
     console.log('handleSheetChanges', index);
   }, []);
 
+  React.useImperativeHandle(forwardedRef, () => ({
+    present: () => {
+      bottomSheetModalRef.current?.present();
+    },
+  }));
+
   return (
-    <BottomSheet
+    <BottomSheetModal
       ref={bottomSheetModalRef}
       index={1}
       onChange={handleSheetChanges}
@@ -21,7 +42,7 @@ export const BottomDrawer = () => {
       <BottomSheetView style={styles.contentContainer}>
         <Text>Awesome 🎉</Text>
       </BottomSheetView>
-    </BottomSheet>
+    </BottomSheetModal>
   );
 };
 
@@ -31,3 +52,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default forwardRef(BottomDrawer);
