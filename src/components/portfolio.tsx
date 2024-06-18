@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {ListItem} from './listItem';
+import {Box, Text} from '../theme';
 
 export const Portfolio = () => {
   return (
-    <View>
+    <Box>
       <Text>Portfolio</Text>
       <ListItem />
-    </View>
+    </Box>
   );
 };

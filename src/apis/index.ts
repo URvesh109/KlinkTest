@@ -10,6 +10,7 @@ const coinIds = [
   'matic-network',
   'solana',
   'cardano',
+  'polkadot',
 ];
 
 const IDS = coinIds.join();

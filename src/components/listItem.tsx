@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Box, Text} from '../theme';
 
 export const ListItem = () => {
   return (
-    <View>
+    <Box>
       <Text>List Item</Text>
-    </View>
+    </Box>
   );
 };
