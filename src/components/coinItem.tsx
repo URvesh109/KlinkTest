@@ -6,8 +6,7 @@ import {CoinIdsType, coinNames} from '../types';
 
 type ItemProps = {coinId: CoinIdsType};
 
-// export const ListItem = (coinName: CoinIds) => {
-export const ListItem = (props: ItemProps) => {
+export const CoinItem = (props: ItemProps) => {
   const data = coinNames[props.coinId];
 
   return (
