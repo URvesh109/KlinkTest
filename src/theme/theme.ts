@@ -49,43 +49,44 @@ export const theme = createTheme({
   },
   textVariants: {
     header: {
-      fontWeight: '900',
+      fontWeight: 900,
       fontSize: scale(18),
       lineHeight: scale(23),
       fontFamily: Fonts.Regular,
     },
     coinTitle: {
-      fontWeight: '600',
+      fontWeight: 600,
       fontSize: scale(16),
       lineHeight: scale(26),
       fontFamily: Fonts.Regular,
     },
     coinBody: {
-      fontWeight: '400',
+      fontWeight: 400,
       fontSize: scale(14),
       fontFamily: Fonts.Regular,
     },
     body: {
-      fontWeight: '600',
+      fontWeight: 600,
       fontSize: scale(14),
       lineHeight: scale(24),
       fontFamily: Fonts.Regular,
     },
     sortBy: {
-      fontWeight: '600',
+      fontWeight: 600,
       fontSize: scale(21),
       lineHeight: scale(30),
       fontFamily: Fonts.Regular,
     },
     sortTitle: {
-      fontWeight: '400',
+      fontWeight: 400,
       fontSize: scale(15),
       lineHeight: scale(25),
       fontFamily: Fonts.Regular,
     },
     defaults: {
       // We can define a default text variant here.
-      fontWeight: '400',
+      color: 'white',
+      fontWeight: 400,
       fontSize: scale(12),
       lineHeight: scale(18),
       fontFamily: Fonts.Regular,

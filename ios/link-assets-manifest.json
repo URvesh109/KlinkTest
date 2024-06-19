@@ -2,48 +2,40 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/AnekBangla-Regular.ttf",
-      "sha1": "891eb61963d8faafb2aa427f9b0e541849c39ce5"
+      "path": "src/assets/fonts/Inter-Black.ttf",
+      "sha1": "f79fa58ace5f55e338c99bf71e7e0702841df6f2"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-Bold.ttf",
-      "sha1": "8922b5847c25952124902b8bc3ccbb80b5652c43"
+      "path": "src/assets/fonts/Inter-Bold.ttf",
+      "sha1": "47ff07c75746682133b81e7ac0537ce50a4c9916"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-ExtraBold.ttf",
-      "sha1": "4f01ac72b26b7e0ce9b17c4e5590f1a17cb9a5f4"
+      "path": "src/assets/fonts/Inter-ExtraBold.ttf",
+      "sha1": "c9b3d2f2449ab2c67ff075f806973fa3d7e104b3"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-ExtraLight.ttf",
-      "sha1": "8d74718bcb444e9d44901a1a8496db485941bb92"
+      "path": "src/assets/fonts/Inter-ExtraLight.ttf",
+      "sha1": "f78ee1d6cbfc64f656247c604ef270ef116abbf5"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-Light.ttf",
-      "sha1": "de86b6faace208f52749f240bb536af5facf81e0"
+      "path": "src/assets/fonts/Inter-Light.ttf",
+      "sha1": "cbb2506d8da21edbb2dc8cfa26e3b42a97d138f8"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-Medium.ttf",
-      "sha1": "e8fc4f4d195bb69fea7975a1bf0f9a8218db6751"
+      "path": "src/assets/fonts/Inter-Medium.ttf",
+      "sha1": "e76f580811e031813e7150131a0724811cdd737a"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-Regular.ttf",
-      "sha1": "228b031e6b1505db6a095fa5cc792ebd2a2dcdd4"
+      "path": "src/assets/fonts/Inter-Regular.ttf",
+      "sha1": "cfa780d0b50b2bb7eacb82984f1b18a95aaa40c5"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-SemiBold.ttf",
-      "sha1": "ea558d26d5e5f0cea37c4abb6b6e20bbcea90584"
+      "path": "src/assets/fonts/Inter-SemiBold.ttf",
+      "sha1": "5e0c44e57e7e090252d79f622899e67585bb892c"
     },
     {
-      "path": "src/assets/fonts/AnekKannada-Thin.ttf",
-      "sha1": "24969c73158f4025772db4d3d42e2a9292bf2285"
-    },
-    {
-      "path": "src/assets/fonts/JetBrainsMono-Regular.ttf",
-      "sha1": "fb01b623fafae768022cba6822bb6ad17714925f"
-    },
-    {
-      "path": "src/assets/fonts/OFL.txt",
-      "sha1": "aa6ed1f3ad59b0afee1897a7d8fe31eff1954bc6"
+      "path": "src/assets/fonts/Inter-Thin.ttf",
+      "sha1": "757805e615c974756646e54ceff8e409d5c47207"
     }
   ]
 }

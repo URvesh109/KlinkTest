@@ -8,24 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* KlinkTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KlinkTestTests.m */; };
-		0AF1D9CA00804DC999BE68A2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D055174E948B085952304 /* OFL.txt */; };
-		1234330A98844693AABE0706 /* AnekKannada-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 349D7F8CEFB442A6B02ED514 /* AnekKannada-ExtraBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		22A1442750F84D5ACABF1A70 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 619E6CE24A45C276FBA5CFEB /* PrivacyInfo.xcprivacy */; };
-		42508926A43048F584758E1D /* AnekKannada-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 130C8EE0284D46D295F423FC /* AnekKannada-Medium.ttf */; };
-		43AF54F43B6144039052BFFB /* AnekKannada-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9199BE731F549A3B2201286 /* AnekKannada-Thin.ttf */; };
-		51F316122E4A4F40A04F7A80 /* AnekBangla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549EF74455FF45CC844D7DC0 /* AnekBangla-Regular.ttf */; };
+		3B9196FD0195408393CB6CF1 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A14DDEB41A54D96A2D9D00F /* Inter-ExtraLight.ttf */; };
+		460E33A5DD5B496E854B4DD4 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0451BD6D7A4FDEADB0DBE9 /* Inter-Bold.ttf */; };
+		47FD35182C23405B00BBEC88 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75E2E890A2BF4E30998FE3CB /* Inter-Regular.ttf */; };
 		55083A214FF27EC09D8E3D74 /* libPods-KlinkTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554E3B6042C2C932FFB68F86 /* libPods-KlinkTest.a */; };
-		6697BB6370064061ACA09AB9 /* AnekKannada-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0104B839F325485DAD8F44A4 /* AnekKannada-SemiBold.ttf */; };
-		6F44BAD4E32642AB908FF00C /* JetBrainsMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 577C03FF2EC444978E676AF2 /* JetBrainsMono-Regular.ttf */; };
-		78A55D4C119445A38BDE15B0 /* AnekKannada-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7329D6B7EBEA4550AFBE4B89 /* AnekKannada-ExtraLight.ttf */; };
+		5D6D5180B981402E842D351E /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15BEEEA7CE8949D3BC058245 /* Inter-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8D2D88445C1D438ABB3E2300 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5B0AE0F79744BC1923732FE /* Inter-Light.ttf */; };
 		90C83E21A56F9477481C276E /* libPods-KlinkTest-KlinkTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2251D7008D193D222A844 /* libPods-KlinkTest-KlinkTestTests.a */; };
-		91360BD32A2840BEA778601F /* AnekKannada-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 655AB916966F43CA83224D3F /* AnekKannada-Bold.ttf */; };
-		C2C34DA419E84E6A9E8BFD6E /* AnekKannada-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A78DD8148C346B5BC26225B /* AnekKannada-Light.ttf */; };
-		DFF1EA0B63184C26B44952E2 /* AnekKannada-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E635B82BAFAC4585BCFD5F62 /* AnekKannada-Regular.ttf */; };
+		9131090CA61E4CCE9EC457AD /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15D7E0254C3B406B85A86B8F /* Inter-Medium.ttf */; };
+		957B8710A4E74325A6CB53C2 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47012F2747E243E480AED4C9 /* Inter-Thin.ttf */; };
+		B585474DC6DD422789D8C1B6 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F896F24CE52246849152DA3E /* Inter-SemiBold.ttf */; };
+		B9E4595ECE634AE095DF7AE7 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6251D98785DA4179B265D26E /* Inter-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +40,6 @@
 		00E356EE1AD99517003FC87E /* KlinkTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlinkTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* KlinkTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlinkTestTests.m; sourceTree = "<group>"; };
-		0104B839F325485DAD8F44A4 /* AnekKannada-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-SemiBold.ttf"; path = "../src/assets/fonts/AnekKannada-SemiBold.ttf"; sourceTree = "<group>"; };
-		130C8EE0284D46D295F423FC /* AnekKannada-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-Medium.ttf"; path = "../src/assets/fonts/AnekKannada-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* KlinkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlinkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KlinkTest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = KlinkTest/AppDelegate.mm; sourceTree = "<group>"; };
@@ -51,23 +47,23 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlinkTest/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KlinkTest/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = KlinkTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		349D7F8CEFB442A6B02ED514 /* AnekKannada-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-ExtraBold.ttf"; path = "../src/assets/fonts/AnekKannada-ExtraBold.ttf"; sourceTree = "<group>"; };
+		15BEEEA7CE8949D3BC058245 /* Inter-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Black.ttf"; path = "../src/assets/fonts/Inter-Black.ttf"; sourceTree = "<group>"; };
+		15D7E0254C3B406B85A86B8F /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../src/assets/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
 		35F2251D7008D193D222A844 /* libPods-KlinkTest-KlinkTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlinkTest-KlinkTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A78DD8148C346B5BC26225B /* AnekKannada-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-Light.ttf"; path = "../src/assets/fonts/AnekKannada-Light.ttf"; sourceTree = "<group>"; };
-		549EF74455FF45CC844D7DC0 /* AnekBangla-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekBangla-Regular.ttf"; path = "../src/assets/fonts/AnekBangla-Regular.ttf"; sourceTree = "<group>"; };
+		47012F2747E243E480AED4C9 /* Inter-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Thin.ttf"; path = "../src/assets/fonts/Inter-Thin.ttf"; sourceTree = "<group>"; };
 		554E3B6042C2C932FFB68F86 /* libPods-KlinkTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlinkTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		577C03FF2EC444978E676AF2 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "JetBrainsMono-Regular.ttf"; path = "../src/assets/fonts/JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
 		619E6CE24A45C276FBA5CFEB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = KlinkTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		655AB916966F43CA83224D3F /* AnekKannada-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-Bold.ttf"; path = "../src/assets/fonts/AnekKannada-Bold.ttf"; sourceTree = "<group>"; };
-		6A5D055174E948B085952304 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../src/assets/fonts/OFL.txt; sourceTree = "<group>"; };
-		7329D6B7EBEA4550AFBE4B89 /* AnekKannada-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-ExtraLight.ttf"; path = "../src/assets/fonts/AnekKannada-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6251D98785DA4179B265D26E /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraBold.ttf"; path = "../src/assets/fonts/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		75E2E890A2BF4E30998FE3CB /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KlinkTest/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A14DDEB41A54D96A2D9D00F /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraLight.ttf"; path = "../src/assets/fonts/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A2C17AB030CC5C71E97E8BC2 /* Pods-KlinkTest-KlinkTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlinkTest-KlinkTestTests.debug.xcconfig"; path = "Target Support Files/Pods-KlinkTest-KlinkTestTests/Pods-KlinkTest-KlinkTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D7F82ABF1E70A7938B2B62 /* Pods-KlinkTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlinkTest.release.xcconfig"; path = "Target Support Files/Pods-KlinkTest/Pods-KlinkTest.release.xcconfig"; sourceTree = "<group>"; };
+		AC0451BD6D7A4FDEADB0DBE9 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		C5B0AE0F79744BC1923732FE /* Inter-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Light.ttf"; path = "../src/assets/fonts/Inter-Light.ttf"; sourceTree = "<group>"; };
 		DBEDD8EFF5CBAE2C641F9022 /* Pods-KlinkTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlinkTest.debug.xcconfig"; path = "Target Support Files/Pods-KlinkTest/Pods-KlinkTest.debug.xcconfig"; sourceTree = "<group>"; };
-		E635B82BAFAC4585BCFD5F62 /* AnekKannada-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-Regular.ttf"; path = "../src/assets/fonts/AnekKannada-Regular.ttf"; sourceTree = "<group>"; };
-		E9199BE731F549A3B2201286 /* AnekKannada-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AnekKannada-Thin.ttf"; path = "../src/assets/fonts/AnekKannada-Thin.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F896F24CE52246849152DA3E /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-SemiBold.ttf"; path = "../src/assets/fonts/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		FE277CE046D32AC76471F341 /* Pods-KlinkTest-KlinkTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlinkTest-KlinkTestTests.release.xcconfig"; path = "Target Support Files/Pods-KlinkTest-KlinkTestTests/Pods-KlinkTest-KlinkTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,17 +164,15 @@
 		B0BED7347CAD4899B82FCFF5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				549EF74455FF45CC844D7DC0 /* AnekBangla-Regular.ttf */,
-				655AB916966F43CA83224D3F /* AnekKannada-Bold.ttf */,
-				349D7F8CEFB442A6B02ED514 /* AnekKannada-ExtraBold.ttf */,
-				7329D6B7EBEA4550AFBE4B89 /* AnekKannada-ExtraLight.ttf */,
-				4A78DD8148C346B5BC26225B /* AnekKannada-Light.ttf */,
-				130C8EE0284D46D295F423FC /* AnekKannada-Medium.ttf */,
-				E635B82BAFAC4585BCFD5F62 /* AnekKannada-Regular.ttf */,
-				0104B839F325485DAD8F44A4 /* AnekKannada-SemiBold.ttf */,
-				E9199BE731F549A3B2201286 /* AnekKannada-Thin.ttf */,
-				577C03FF2EC444978E676AF2 /* JetBrainsMono-Regular.ttf */,
-				6A5D055174E948B085952304 /* OFL.txt */,
+				75E2E890A2BF4E30998FE3CB /* Inter-Regular.ttf */,
+				15BEEEA7CE8949D3BC058245 /* Inter-Black.ttf */,
+				AC0451BD6D7A4FDEADB0DBE9 /* Inter-Bold.ttf */,
+				6251D98785DA4179B265D26E /* Inter-ExtraBold.ttf */,
+				9A14DDEB41A54D96A2D9D00F /* Inter-ExtraLight.ttf */,
+				C5B0AE0F79744BC1923732FE /* Inter-Light.ttf */,
+				15D7E0254C3B406B85A86B8F /* Inter-Medium.ttf */,
+				F896F24CE52246849152DA3E /* Inter-SemiBold.ttf */,
+				47012F2747E243E480AED4C9 /* Inter-Thin.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,20 +281,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FD35182C23405B00BBEC88 /* Inter-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				22A1442750F84D5ACABF1A70 /* PrivacyInfo.xcprivacy in Resources */,
-				51F316122E4A4F40A04F7A80 /* AnekBangla-Regular.ttf in Resources */,
-				91360BD32A2840BEA778601F /* AnekKannada-Bold.ttf in Resources */,
-				1234330A98844693AABE0706 /* AnekKannada-ExtraBold.ttf in Resources */,
-				78A55D4C119445A38BDE15B0 /* AnekKannada-ExtraLight.ttf in Resources */,
-				C2C34DA419E84E6A9E8BFD6E /* AnekKannada-Light.ttf in Resources */,
-				42508926A43048F584758E1D /* AnekKannada-Medium.ttf in Resources */,
-				DFF1EA0B63184C26B44952E2 /* AnekKannada-Regular.ttf in Resources */,
-				6697BB6370064061ACA09AB9 /* AnekKannada-SemiBold.ttf in Resources */,
-				43AF54F43B6144039052BFFB /* AnekKannada-Thin.ttf in Resources */,
-				6F44BAD4E32642AB908FF00C /* JetBrainsMono-Regular.ttf in Resources */,
-				0AF1D9CA00804DC999BE68A2 /* OFL.txt in Resources */,
+				5D6D5180B981402E842D351E /* Inter-Black.ttf in Resources */,
+				460E33A5DD5B496E854B4DD4 /* Inter-Bold.ttf in Resources */,
+				B9E4595ECE634AE095DF7AE7 /* Inter-ExtraBold.ttf in Resources */,
+				3B9196FD0195408393CB6CF1 /* Inter-ExtraLight.ttf in Resources */,
+				8D2D88445C1D438ABB3E2300 /* Inter-Light.ttf in Resources */,
+				9131090CA61E4CCE9EC457AD /* Inter-Medium.ttf in Resources */,
+				B585474DC6DD422789D8C1B6 /* Inter-SemiBold.ttf in Resources */,
+				957B8710A4E74325A6CB53C2 /* Inter-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
