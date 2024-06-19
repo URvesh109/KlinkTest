@@ -5,6 +5,11 @@ import {Pressable} from 'react-native';
 import {scale} from 'react-native-size-matters';
 import {CoinIdsType, coinNames} from '../types';
 import {Chart} from './chart';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
 
 /**
  * LineChart is missing left and marginLeft alignment style and props, so
@@ -17,7 +22,21 @@ const marginLeft: ViewStyle = {
 type ItemProps = {coinId: CoinIdsType; status: boolean};
 
 export const CoinItem = (props: ItemProps) => {
+  const {status} = props;
   const data = coinNames[props.coinId];
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      opacity: withTiming(!status ? 1 : 0, {
+        duration: 300,
+        easing: Easing.ease,
+      }),
+      height: withTiming(!status ? 80 : 0, {
+        duration: 400,
+        easing: Easing.ease,
+      }),
+    };
+  }, [status]);
 
   return (
     <Pressable onPress={() => console.log('On list item press')}>
@@ -61,15 +80,13 @@ export const CoinItem = (props: ItemProps) => {
             </Text>
           </Box>
         </Box>
-        {!props.status && (
-          <Box height={scale(80)} style={marginLeft}>
-            <Chart
-              color={data.color}
-              startFillColor={data.startFillColor}
-              endFillColor={data.endFillColor}
-            />
-          </Box>
-        )}
+        <Animated.View style={[animatedStyles, marginLeft]} key={'sparkline'}>
+          <Chart
+            color={data.color}
+            startFillColor={data.startFillColor}
+            endFillColor={data.endFillColor}
+          />
+        </Animated.View>
       </Box>
     </Pressable>
   );
