@@ -1,14 +1,9 @@
 import React from 'react';
-import {LineChart} from 'react-native-gifted-charts';
+import {LineChart, LineChartPropsType} from 'react-native-gifted-charts';
 import {scale} from 'react-native-size-matters';
 
-type ChartProps = {
-  color: string;
-  startFillColor: string;
-  endFillColor: string;
-};
-
-export const Chart = () => {
+export const Chart: React.FC<LineChartPropsType> = props => {
+  const {color, startFillColor, endFillColor} = props;
   return (
     <LineChart
       areaChart
@@ -16,12 +11,12 @@ export const Chart = () => {
       isAnimated
       animationDuration={1000}
       hideDataPoints
-      color="green"
+      color={color}
       thickness={1}
-      startFillColor="rgba(20,105,81,0.3)"
-      endFillColor="rgba(20,85,81,0.01)"
-      startOpacity={0.4}
-      endOpacity={0.1}
+      startFillColor={startFillColor}
+      endFillColor={endFillColor}
+      startOpacity={0.35}
+      endOpacity={0.01}
       hideYAxisText
       hideAxesAndRules
       height={scale(80)}

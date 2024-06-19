@@ -62,7 +62,11 @@ export const CoinItem = (props: ItemProps) => {
           </Box>
         </Box>
         <Box height={scale(80)} style={marginLeft}>
-          <Chart />
+          <Chart
+            color={data.color}
+            startFillColor={data.startFillColor}
+            endFillColor={data.endFillColor}
+          />
         </Box>
       </Box>
     </Pressable>
