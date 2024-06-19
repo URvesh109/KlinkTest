@@ -29,11 +29,11 @@ export const CoinItem = (props: ItemProps) => {
     return {
       opacity: withTiming(!status ? 1 : 0, {
         duration: 300,
-        easing: Easing.ease,
+        easing: Easing.linear,
       }),
       height: withTiming(!status ? 80 : 0, {
         duration: 400,
-        easing: Easing.ease,
+        easing: Easing.linear,
       }),
     };
   }, [status]);
