@@ -14,7 +14,7 @@ const marginLeft: ViewStyle = {
   marginLeft: -scale(25),
 };
 
-type ItemProps = {coinId: CoinIdsType};
+type ItemProps = {coinId: CoinIdsType; status: boolean};
 
 export const CoinItem = (props: ItemProps) => {
   const data = coinNames[props.coinId];
@@ -61,13 +61,15 @@ export const CoinItem = (props: ItemProps) => {
             </Text>
           </Box>
         </Box>
-        <Box height={scale(80)} style={marginLeft}>
-          <Chart
-            color={data.color}
-            startFillColor={data.startFillColor}
-            endFillColor={data.endFillColor}
-          />
-        </Box>
+        {!props.status && (
+          <Box height={scale(80)} style={marginLeft}>
+            <Chart
+              color={data.color}
+              startFillColor={data.startFillColor}
+              endFillColor={data.endFillColor}
+            />
+          </Box>
+        )}
       </Box>
     </Pressable>
   );

@@ -3,13 +3,15 @@ import {Switch as Sw} from 'react-native-switch';
 import {scale} from 'react-native-size-matters';
 import {palette} from '../theme';
 import {SvgProps} from 'react-native-svg';
+import {collapseState} from '../atoms';
+import {useRecoilState} from 'recoil';
 
 import {Icons} from '../assets';
 
 const {CollapseIcon, ExpandIcon} = Icons;
 
 export const Switch = () => {
-  const [collapse, setCollapse] = React.useState(true);
+  const [collapse, setCollapse] = useRecoilState(collapseState);
 
   const getIcon = React.useCallback(() => {
     const Icon: React.FC<SvgProps> = collapse ? CollapseIcon : ExpandIcon;
@@ -17,9 +19,13 @@ export const Switch = () => {
     return <Icon width={15} height={15} />;
   }, [collapse]);
 
+  const onValueChange = () => {
+    setCollapse(!collapse);
+  };
+
   return (
     <Sw
-      onValueChange={() => setCollapse(!collapse)}
+      onValueChange={onValueChange}
       value={collapse}
       circleSize={scale(29)}
       activeText={''}
