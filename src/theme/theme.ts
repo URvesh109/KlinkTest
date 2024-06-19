@@ -36,6 +36,17 @@ export const theme = createTheme({
     xxl: scale(30),
     xxxl: scale(45),
   },
+  pressableVariants: {
+    outline: {
+      borderColor: 'lightWhite',
+      borderWidth: scale(1),
+      borderRadius: scale(8),
+    },
+    solid: {
+      backgroundColor: 'lightBlue',
+      borderRadius: scale(8),
+    },
+  },
   textVariants: {
     header: {
       fontWeight: '900',
@@ -79,6 +90,8 @@ export const theme = createTheme({
       lineHeight: scale(18),
       fontFamily: Fonts.Regular,
     },
+    solid: {},
+    outline: {},
   },
   scrollViewVariants: {
     defaults: {},

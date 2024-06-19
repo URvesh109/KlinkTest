@@ -19,9 +19,6 @@ const Home = () => {
   return (
     <BottomSheetModalProvider>
       <ScrollView nestedScrollEnabled={false}>
-        <Text variant={'coinTitle'} color={'daiColor'}>
-          USDC
-        </Text>
         <Portfolio />
       </ScrollView>
     </BottomSheetModalProvider>

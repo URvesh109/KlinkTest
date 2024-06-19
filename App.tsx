@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, StatusBar, SafeAreaView} from 'react-native';
-// import {SafeAreaView} from 'react-native-safe-area-context';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {RecoilRoot} from 'recoil';
 import Home from './src/homeScreen';
