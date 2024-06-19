@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {ListItem} from './listItem';
+import {CoinItem} from './coinItem';
 import {coinIds} from '../apis';
 import {CoinIdsType} from '../types';
 
@@ -8,7 +8,7 @@ export const CoinFlatList = () => {
   const renderItem = React.useCallback(({item}: {item: CoinIdsType}) => {
     return (
       <React.Fragment key={item}>
-        <ListItem coinId={item} />
+        <CoinItem coinId={item} />
       </React.Fragment>
     );
   }, []);

@@ -41,6 +41,7 @@ export const theme = createTheme({
       fontWeight: '900',
       fontSize: scale(18),
       lineHeight: scale(23),
+      fontFamily: Fonts.Regular,
     },
     coinTitle: {
       fontWeight: '600',
@@ -63,6 +64,12 @@ export const theme = createTheme({
       fontWeight: '600',
       fontSize: scale(21),
       lineHeight: scale(30),
+      fontFamily: Fonts.Regular,
+    },
+    sortTitle: {
+      fontWeight: '400',
+      fontSize: scale(15),
+      lineHeight: scale(25),
       fontFamily: Fonts.Regular,
     },
     defaults: {

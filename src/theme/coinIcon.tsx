@@ -5,11 +5,11 @@ import {scale} from 'react-native-size-matters';
 
 const ICON_SIZE = 50;
 
-const icons: any = {
+const icons = {
+  bitcoin: Icons.BTC,
   'usd-coin': Icons.USDC,
   tether: Icons.USDT,
   dai: Icons.DAI,
-  bitcoin: Icons.BTC,
   'matic-network': Icons.MATIC,
   solana: Icons.SOL,
   cardano: Icons.ADA,
@@ -20,7 +20,7 @@ export type IconName =
   | 'usd-coin'
   | 'tether'
   | 'dai'
-  | 'bitcon'
+  | 'bitcoin'
   | 'matic-network'
   | 'solana'
   | 'cardano'

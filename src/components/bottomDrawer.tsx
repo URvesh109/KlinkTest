@@ -3,10 +3,11 @@ import React, {
   PropsWithChildren,
   forwardRef,
 } from 'react';
-import {Pressable, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {BottomSheetModal, BottomSheetView} from '@gorhom/bottom-sheet';
 import {scale} from 'react-native-size-matters';
 import {Box, palette, Text} from '../theme';
+import {SortByFlatList} from './sortByFlatList';
 
 export type BottomDrawerPresentHandle = {
   present: () => void;
@@ -22,7 +23,7 @@ const BottomDrawer: ForwardRefRenderFunction<
 > = (props, forwardedRef) => {
   const bottomSheetModalRef = React.useRef<BottomSheetModal>(null);
 
-  const snapPoints = React.useMemo(() => ['1%', '34%'], []);
+  const snapPoints = React.useMemo(() => ['1%', '40%'], []);
 
   const handleSheetChanges = React.useCallback((index: number) => {
     console.log('handleSheetChanges', index);
@@ -42,27 +43,22 @@ const BottomDrawer: ForwardRefRenderFunction<
       enablePanDownToClose
       backgroundStyle={styles.backgroundStyle}
       backdropComponent={null}
-      containerStyle={styles.containerStyle}
       stackBehavior="replace"
       handleIndicatorStyle={styles.handleIndicatorStyle}
       snapPoints={snapPoints}>
       <BottomSheetView>
-        <Pressable onPress={() => bottomSheetModalRef.current?.close()}>
-          <Box alignItems="center" marginTop={'m'}>
-            <Text color="white" variant={'sortBy'}>
-              Sort by
-            </Text>
-          </Box>
-        </Pressable>
+        <Box alignItems="center" marginTop={'m'}>
+          <Text color="white" variant={'sortBy'}>
+            Sort by
+          </Text>
+        </Box>
+        <SortByFlatList />
       </BottomSheetView>
     </BottomSheetModal>
   );
 };
 
 const styles = StyleSheet.create({
-  containerStyle: {
-    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-  },
   backgroundStyle: {
     backgroundColor: palette.bottomBarColor,
   },
