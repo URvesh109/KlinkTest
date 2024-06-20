@@ -37,18 +37,6 @@ export const theme = createTheme({
     xxl: scale(30),
     xxxl: scale(45),
   },
-  pressableVariants: {
-    outline: {
-      borderColor: 'lightWhite',
-      borderWidth: scale(1),
-      borderRadius: scale(8),
-    },
-    solid: {
-      backgroundColor: 'lightBlue',
-      borderRadius: scale(8),
-    },
-    defaults: {},
-  },
   textVariants: {
     header: {
       fontWeight: 900,
