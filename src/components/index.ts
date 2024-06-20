@@ -6,3 +6,4 @@ export * from './coinFlatList';
 export * from './sortByFlatList';
 export * from './sortItem';
 export * from './chart';
+export * from './pointerLabel';

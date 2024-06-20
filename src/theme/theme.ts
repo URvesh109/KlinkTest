@@ -30,6 +30,7 @@ export const theme = createTheme({
   spacing: {
     vs: scale(3),
     s: scale(5),
+    sm: scale(7),
     m: scale(10),
     l: scale(15),
     xl: scale(20),
@@ -100,7 +101,7 @@ export const theme = createTheme({
     balance: {
       fontWeight: 800,
       fontSize: scale(48),
-      // lineHeight: scale(58),
+      lineHeight: scale(58),
       fontFamily: Fonts.Regular,
     },
     defaults: {

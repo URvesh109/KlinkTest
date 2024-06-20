@@ -10,11 +10,7 @@ export const CoinFlatList = () => {
   const isCollapse = useRecoilValue(collapseState);
   const renderItem = React.useCallback(
     ({item}: {item: CoinIdsType}) => {
-      return (
-        <React.Fragment key={item}>
-          <CoinItem coinId={item} status={isCollapse} />
-        </React.Fragment>
-      );
+      return <CoinItem key={item} coinId={item} status={isCollapse} />;
     },
     [isCollapse],
   );

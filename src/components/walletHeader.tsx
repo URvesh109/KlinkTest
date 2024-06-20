@@ -8,20 +8,18 @@ import {getBalance} from '../utils';
 const {BellIcon} = Icons;
 
 const WalletHeader = () => {
-  const splitBalance = getBalance(121222);
+  const splitBalance = getBalance(11212.113);
   const [decimalView, setDecimalView] = React.useState(true);
   const window = useWindowDimensions();
-  console.log('split', splitBalance[0]);
 
   /**
-   * Logic to do display decimal point if the balance text is more than
+   * Logic to hide display decimal point if the balance text width is more than
    * mobile device screen size.
    */
 
   const onLayoutchange = React.useCallback(
     (e: LayoutChangeEvent) => {
       const layoutWidth = e.nativeEvent.layout.width;
-      console.log('layout', layoutWidth, window.width);
       if (layoutWidth >= window.width - 80) {
         setDecimalView(false);
       } else {
@@ -52,7 +50,7 @@ const WalletHeader = () => {
         </Pressable>
       </Box>
       <Box marginTop="m" flexDirection="row" alignItems="flex-start">
-        <Text marginTop="m" variant="dollarAndDecimal">
+        <Text marginTop="sm" variant="dollarAndDecimal">
           $
         </Text>
         <Box width={window.width - 50} flexDirection="row">
@@ -60,7 +58,7 @@ const WalletHeader = () => {
             {splitBalance[0]}
           </Text>
           {decimalView ? (
-            <Text variant="dollarAndDecimal" marginTop="m">
+            <Text variant="dollarAndDecimal" marginTop="sm">
               .{splitBalance[1]}
             </Text>
           ) : null}
