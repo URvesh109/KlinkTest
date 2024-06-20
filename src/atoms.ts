@@ -1,8 +1,8 @@
 import {atom} from 'recoil';
 
 const KEYS = {
-  COLLAPSE: 'collaspse',
-  DURATION_BTN: 'durationBtn',
+  COLLAPSE: 'collaspseKey',
+  DURATION_BTN: 'durationBtnKey',
 };
 
 export const collapseState = atom<boolean>({

@@ -36,3 +36,13 @@ export const fetchCoinList = async (): Promise<any> => {
     return Promise.reject(error);
   }
 };
+
+// const url =
+//   'https://api.coingecko.com/api/v3/coins/solana/market_chart/range?vs_currency=usd&from=1718691270&to=1718777670&precision=0';
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     'x-cg-demo-api-key': 'CG-sdVFeajmkhPcN3RbUT7RKsjN',
+//   },
+// };

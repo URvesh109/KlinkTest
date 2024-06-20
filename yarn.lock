@@ -3237,7 +3237,7 @@ __metadata:
     react-native: 0.74.2
     react-native-error-boundary: ^1.2.4
     react-native-gesture-handler: ^2.16.2
-    react-native-gifted-charts: ^1.4.10
+    react-native-gifted-charts: "git+https://github.com/URvesh109/react-native-gifted-charts"
     react-native-linear-gradient: ^2.8.3
     react-native-reanimated: ^3.12.0
     react-native-size-matters: ^0.4.2
@@ -5560,13 +5560,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gifted-charts-core@npm:^0.1.4":
-  version: 0.1.5
-  resolution: "gifted-charts-core@npm:0.1.5"
+"gifted-charts-core@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "gifted-charts-core@npm:0.1.7"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 8aa5d7ce9232077e0d487e8a9e4b90a02f54dc1e80f94a3e5456bdf01729bbb66adfc7c5336d976725a986d154f61bc27580527c97d75d25430e9739fbbf0eb5
+  checksum: a6df279f31f413268eaf4dae22a77e074df42612d80ddd9ab47ac0f78dfc7e378b91bc937b9e4b9fc61bf28f5117d8fad8a5c5f5a53141f2790cf8940df481d7
   languageName: node
   linkType: hard
 
@@ -8511,11 +8511,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gifted-charts@npm:^1.4.10":
-  version: 1.4.10
-  resolution: "react-native-gifted-charts@npm:1.4.10"
+"react-native-gifted-charts@git+https://github.com/URvesh109/react-native-gifted-charts":
+  version: 1.4.11
+  resolution: "react-native-gifted-charts@https://github.com/URvesh109/react-native-gifted-charts.git#commit=01b52ad2472386d52fd8eb8c911ca8f9cc439a9c"
   dependencies:
-    gifted-charts-core: ^0.1.4
+    gifted-charts-core: ^0.1.7
   peerDependencies:
     expo-linear-gradient: "*"
     react: "*"
@@ -8527,7 +8527,7 @@ __metadata:
       optional: true
     react-native-linear-gradient:
       optional: true
-  checksum: 0b474460a362c6e6359912f2dbb319d94b598e7b95ce9eaf26110da79eb13122b86cbaa753c7e0bb1381b43fce7e9e36fb0e4186ae19b53f3493efaa108cbebc
+  checksum: 79f7e39edfb1220372dfe19f0568275c2c1e0ee587ba7e03deec450cdf96655d4c02ff1d4ae8be9ff5d269f9609ada2f4699f204add80f57cbaea2bb58fc43ee
   languageName: node
   linkType: hard
 
