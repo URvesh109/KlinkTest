@@ -11,7 +11,7 @@ export const PointerLabel = () => {
   const color = positive ? 'green' : 'dotColor';
 
   return (
-    <Box flexDirection="row" alignItems="center">
+    <Box flexDirection="row" alignItems="center" marginHorizontal="l">
       {positive ? (
         <UpArrowIcon width={scale(16)} height={scale(16)} />
       ) : (

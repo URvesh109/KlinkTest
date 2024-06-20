@@ -1,6 +1,6 @@
 import React from 'react';
-import {ViewStyle} from 'react-native';
-import {Box, Text, CoinIcon, IconName} from '../theme';
+import {useWindowDimensions} from 'react-native';
+import {Box, Text, CoinIcon, IconName, marginLeft} from '../theme';
 import {Pressable} from 'react-native';
 import {scale} from 'react-native-size-matters';
 import {CoinIdsType, coinNames} from '../types';
@@ -11,19 +11,12 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 
-/**
- * LineChart is missing left and marginLeft alignment style and props, so
- * added marginLeft to fit it nicely in the box.
- */
-const marginLeft: ViewStyle = {
-  marginLeft: -scale(25),
-};
-
 type ItemProps = {coinId: CoinIdsType; status: boolean};
 
 export const CoinItem = (props: ItemProps) => {
   const {status} = props;
   const data = coinNames[props.coinId];
+  const window = useWindowDimensions();
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -35,6 +28,7 @@ export const CoinItem = (props: ItemProps) => {
         duration: 400,
         easing: Easing.linear,
       }),
+      width: window.width,
     };
   }, [status]);
 
@@ -85,6 +79,7 @@ export const CoinItem = (props: ItemProps) => {
             color={data.color}
             startFillColor={data.startFillColor}
             endFillColor={data.endFillColor}
+            height={scale(80)}
           />
         </Animated.View>
       </Box>

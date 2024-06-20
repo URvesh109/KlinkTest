@@ -1,9 +1,8 @@
 import React from 'react';
 import {LineChart, LineChartPropsType} from 'react-native-gifted-charts';
-import {scale} from 'react-native-size-matters';
 
 export const Chart: React.FC<LineChartPropsType> = props => {
-  const {color, startFillColor, endFillColor} = props;
+  const {color, startFillColor, endFillColor, ...rest} = props;
   return (
     <LineChart
       areaChart
@@ -19,16 +18,16 @@ export const Chart: React.FC<LineChartPropsType> = props => {
       endOpacity={0.01}
       hideYAxisText
       hideAxesAndRules
-      height={scale(80)}
       adjustToWidth
       onlyPositive
-      overflowBottom={-5}
+      overflowBottom={-10}
+      {...rest}
     />
   );
 };
 
 const ptData = [
-  {value: 40},
+  {value: 120},
   {value: 140},
   {value: 145},
   {value: 160},

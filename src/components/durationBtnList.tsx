@@ -14,7 +14,11 @@ export const DurationBtnList = () => {
   };
 
   return (
-    <Box flexDirection="row" justifyContent="space-between" marginTop="l">
+    <Box
+      flexDirection="row"
+      justifyContent="space-between"
+      marginTop="l"
+      marginHorizontal="l">
       {btnList.map(item => (
         <DurationBtn key={item} label={item} onPress={onPress} />
       ))}
