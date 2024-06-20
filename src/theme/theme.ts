@@ -46,6 +46,7 @@ export const theme = createTheme({
       backgroundColor: 'lightBlue',
       borderRadius: scale(8),
     },
+    defaults: {},
   },
   textVariants: {
     header: {
@@ -72,6 +73,12 @@ export const theme = createTheme({
       lineHeight: scale(16),
       fontFamily: Fonts.Regular,
     },
+    notification: {
+      fontWeight: 600,
+      fontSize: scale(14),
+      lineHeight: scale(18),
+      fontFamily: Fonts.Regular,
+    },
     sortBy: {
       fontWeight: 600,
       fontSize: scale(21),
@@ -84,15 +91,21 @@ export const theme = createTheme({
       lineHeight: scale(21),
       fontFamily: Fonts.Regular,
     },
-    defaults: {
-      // We can define a default text variant here.
-      color: 'white',
-      // fontSize: scale(12),
-      // lineHeight: scale(18),
-      // fontFamily: Fonts.SemiBold,
+    dollarAndDecimal: {
+      fontWeight: 800,
+      fontSize: scale(21),
+      lineHeight: scale(27),
+      fontFamily: Fonts.Regular,
     },
-    solid: {},
-    outline: {},
+    balance: {
+      fontWeight: 800,
+      fontSize: scale(48),
+      // lineHeight: scale(58),
+      fontFamily: Fonts.Regular,
+    },
+    defaults: {
+      color: 'white',
+    },
   },
   scrollViewVariants: {
     defaults: {},

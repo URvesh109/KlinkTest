@@ -1,6 +1,7 @@
 import React from 'react';
 import {Portfolio} from './components';
 import CryptoActivity from './components/cryptoActivity';
+import WalletHeader from './components/walletHeader';
 import {ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 // import {fetchCoinList} from './apis';
@@ -20,6 +21,7 @@ const Home = () => {
   return (
     <BottomSheetModalProvider>
       <ScrollView nestedScrollEnabled={false}>
+        <WalletHeader />
         <CryptoActivity />
         <Portfolio />
       </ScrollView>
