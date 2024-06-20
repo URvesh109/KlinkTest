@@ -1,4 +1,5 @@
 import BellIcon from './icons/bell.svg';
+import BuyIcon from './icons/buy.svg';
 import CardIcon from './icons/card.svg';
 import CheckedIcon from './icons/checked.svg';
 import CollapseIcon from './icons/collapse.svg';
@@ -29,6 +30,7 @@ import USDT from './icons/crypto/USDT.svg';
 
 export default {
   BellIcon,
+  BuyIcon,
   CardIcon,
   CheckedIcon,
   CollapseIcon,

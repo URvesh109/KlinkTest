@@ -1,9 +1,9 @@
 import React from 'react';
-// import {fetchCoinList} from './apis';
 import {Portfolio} from './components';
-import {ScrollView, Text} from './theme';
+import CryptoActivity from './components/cryptoActivity';
+import {ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import {Fonts} from './assets';
+// import {fetchCoinList} from './apis';
 
 const Home = () => {
   React.useEffect(() => {
@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <BottomSheetModalProvider>
       <ScrollView nestedScrollEnabled={false}>
-        <Text>Checking</Text>
+        <CryptoActivity />
         <Portfolio />
       </ScrollView>
     </BottomSheetModalProvider>

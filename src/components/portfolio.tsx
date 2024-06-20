@@ -12,7 +12,7 @@ const {SortAscendingIcon} = Icons;
 export const Portfolio = () => {
   const bottomDrawerRef = React.useRef<BottomDrawerPresentHandle>(null);
   return (
-    <Box marginHorizontal="l" marginVertical="xxl">
+    <Box marginHorizontal="l" marginVertical="xl">
       <Text color="white" variant="header">
         Portfolio
       </Text>
