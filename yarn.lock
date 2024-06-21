@@ -3230,6 +3230,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     apisauce: ^3.0.1
     babel-jest: ^29.6.3
+    dayjs: ^1.11.11
     eslint: ^8.19.0
     jest: ^29.6.3
     prettier: 2.8.8
@@ -4389,7 +4390,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.8.15":
+"dayjs@npm:^1.11.11, dayjs@npm:^1.8.15":
   version: 1.11.11
   resolution: "dayjs@npm:1.11.11"
   checksum: 84788275aad8a87fee4f1ce4be08861df29687aae6b7b43dd65350118a37dda56772a3902f802cb2dc651dfed447a5a8df62d88f0fb900dba8333e411190a5d5
