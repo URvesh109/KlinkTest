@@ -7,6 +7,5 @@ export * from './sortByFlatList';
 export * from './sortItem';
 export * from './chart';
 export * from './pointerDate';
-export * from './dummyChart';
 export * from './pointerComponent';
 export * from './pointerLabelComponent';
