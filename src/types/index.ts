@@ -116,3 +116,11 @@ export const coinNames: CoinNames = {
     endFillColor: 'rgba(230, 0, 122, 0)',
   },
 };
+
+export type IMessageType = 'success' | 'error' | null;
+
+export interface MessageType {
+  info: string;
+  visible: boolean;
+  type: IMessageType;
+}

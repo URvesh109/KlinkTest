@@ -26,7 +26,7 @@ export const theme = createTheme({
     cardanoColor: palette.cardanoColor,
     bottomBarColor: palette.bottomBarColor,
     disabledBulletColor: palette.disabledBulletColor,
-    loaderBackgroundColor: palette.loaderBackground,
+    loaderIndicatorColor: palette.loaderIndicatorColor,
   },
   spacing: {
     vs: scale(3),

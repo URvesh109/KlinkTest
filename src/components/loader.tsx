@@ -34,7 +34,7 @@ export const Loader = ({children}: {children: any}) => {
   return (
     <>
       {isLoading && (
-        <Box backgroundColor="loaderBackgroundColor" style={[loadingViewStyle]}>
+        <Box backgroundColor="loaderIndicatorColor" style={[loadingViewStyle]}>
           <Box flex={1} justifyContent="center" alignItems="center">
             <Box style={indicatorbar}>
               <Box style={indicatorView}>

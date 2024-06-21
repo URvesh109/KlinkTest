@@ -1,4 +1,5 @@
 import {create} from 'apisauce';
+import {CoinData} from '../types';
 
 const BASE_URL = 'https://api.coingecko.com/api/v3';
 
@@ -28,10 +29,10 @@ const api = create({
   },
 });
 
-export const fetchCoinList = async (): Promise<any> => {
+export const fetchCoinList = async (): Promise<Array<CoinData>> => {
   try {
-    const rawData = await api.get(endPoints.coinMarkets);
-    console.log('RawData', rawData.data);
+    const {data} = await api.get(endPoints.coinMarkets);
+    return data as Array<CoinData>;
   } catch (error) {
     return Promise.reject(error);
   }

@@ -18,5 +18,5 @@ export const palette = {
   cardanoColor: '#0133AE',
   bottomBarColor: '#1E1D1D',
   disabledBulletColor: '#4A4948',
-  loaderBackground: 'rgba(0, 0, 0, 0.85)',
+  loaderIndicatorColor: 'rgba(0, 0, 0, 0.85)',
 };

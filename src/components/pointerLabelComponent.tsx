@@ -35,9 +35,7 @@ export const PointerLabelComponent: React.FC<any> = props => {
     date = dayjs(items[0].date).format('ddd, MMM DD, HH:MM');
   }
 
-  console.log('date', date);
-
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     setPointerDate(date);
   }, [date, setPointerDate]);
 
