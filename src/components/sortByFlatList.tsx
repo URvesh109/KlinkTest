@@ -1,24 +1,34 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import SortItem from './sortItem';
+import {SortItem} from './sortItem';
 import {Box} from '../theme';
+import {sortSelectionState} from '../atoms';
+import {useRecoilState} from 'recoil';
 
-export type Sortkey = 'value' | 'a-z' | 'z-a';
+export type Sortkey = 'Value' | 'A-Z' | 'Z-A';
 export type SortIcons = 'ListNumIcon' | 'DoubleSideArrowIcon';
 
 type SortDataProps = {
   iconName: SortIcons;
   label: string;
-  labelKey: Sortkey;
 };
 
 const data: Array<SortDataProps> = [
-  {iconName: 'ListNumIcon', label: 'Value', labelKey: 'value'},
-  {iconName: 'DoubleSideArrowIcon', label: 'A-Z', labelKey: 'a-z'},
-  {iconName: 'DoubleSideArrowIcon', label: 'Z-A', labelKey: 'z-a'},
+  {iconName: 'ListNumIcon', label: 'Value'},
+  {iconName: 'DoubleSideArrowIcon', label: 'A-Z'},
+  {iconName: 'DoubleSideArrowIcon', label: 'Z-A'},
 ];
 
 export const SortByFlatList = () => {
+  const [selectedSort, setSortSelection] = useRecoilState(sortSelectionState);
+
+  const onPress = React.useCallback(
+    (item: Sortkey) => {
+      setSortSelection(item);
+    },
+    [setSortSelection],
+  );
+
   const itemSeparator = React.useCallback(() => {
     return (
       <Box
@@ -29,25 +39,26 @@ export const SortByFlatList = () => {
     );
   }, []);
 
-  const renderItem = React.useCallback(({item}: {item: SortDataProps}) => {
-    return (
-      <React.Fragment key={item.labelKey}>
+  const renderItem = React.useCallback(
+    ({item}: {item: SortDataProps}) => {
+      return (
         <SortItem
+          key={item.label}
           iconName={item.iconName}
           label={item.label}
-          selected={'value'}
-          labelKey={item.labelKey}
-          onSelect={() => {}}
+          selected={selectedSort}
+          onSelect={onPress}
         />
-      </React.Fragment>
-    );
-  }, []);
+      );
+    },
+    [onPress, selectedSort],
+  );
 
   return (
     <FlatList
       data={data}
       renderItem={renderItem}
-      keyExtractor={item => item.labelKey}
+      keyExtractor={item => item.label}
       scrollEnabled={false}
       ItemSeparatorComponent={itemSeparator}
     />

@@ -12,9 +12,7 @@ type SorItemProps = {
   selected: Sortkey;
   iconName: SortIcons;
   label: string;
-  labelKey: Sortkey;
-
-  onSelect: () => void;
+  onSelect: (label: Sortkey) => void;
 };
 
 const icons = {
@@ -22,16 +20,20 @@ const icons = {
   DoubleSideArrowIcon: Icons.DoubleSideArrowIcon,
 };
 
-const SortItem: React.FC<SorItemProps> = props => {
-  const {iconName, label, selected, labelKey} = props;
+export const SortItem: React.FC<SorItemProps> = props => {
+  const {iconName, label, selected, onSelect} = props;
 
   const Icon: React.FC<SvgProps> = icons[`${iconName}`];
 
   const SelectIcon: React.FC<SvgProps> =
-    selected === labelKey ? CheckedIcon : UncheckedIcon;
+    selected === label ? CheckedIcon : UncheckedIcon;
+
+  const onPress = () => {
+    onSelect(label as Sortkey);
+  };
 
   return (
-    <Pressable onPress={() => console.log('On sort item press')}>
+    <Pressable onPress={onPress}>
       <Box
         paddingHorizontal="l"
         height={scale(60)}
@@ -53,5 +55,3 @@ const SortItem: React.FC<SorItemProps> = props => {
     </Pressable>
   );
 };
-
-export default React.memo(SortItem);
