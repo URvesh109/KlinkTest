@@ -2,6 +2,9 @@ import React from 'react';
 import {ViewStyle, TextStyle} from 'react-native';
 import {Box, Text} from '../theme';
 import {scale} from 'react-native-size-matters';
+import dayjs from 'dayjs';
+import {useSetRecoilState} from 'recoil';
+import {pointerDateState} from '../atoms';
 
 const pointerContainerStyle: ViewStyle = {
   height: scale(21),
@@ -23,12 +26,26 @@ const labelStyle: TextStyle = {
 };
 
 export const PointerLabelComponent: React.FC<any> = props => {
+  const setPointerDate = useSetRecoilState(pointerDateState);
   const {items} = props;
+  let value = '';
+  let date = '';
+  if (items.length) {
+    value = items[0].value;
+    date = dayjs(items[0].date).format('ddd, MMM DD, HH:MM');
+  }
+
+  console.log('date', date);
+
+  React.useEffect(() => {
+    setPointerDate(date);
+  }, [date, setPointerDate]);
+
   return (
     <Box style={pointerContainerStyle}>
       <Box backgroundColor="white" style={pointerLabelStyle}>
         <Text color="black" style={labelStyle} numberOfLines={1}>
-          {'$' + items[0].value}
+          {'$' + value}
         </Text>
       </Box>
     </Box>

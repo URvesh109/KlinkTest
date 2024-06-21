@@ -6,7 +6,7 @@ export * from './coinFlatList';
 export * from './sortByFlatList';
 export * from './sortItem';
 export * from './chart';
-export * from './pointerLabel';
+export * from './pointerDate';
 export * from './dummyChart';
 export * from './pointerComponent';
 export * from './pointerLabelComponent';
