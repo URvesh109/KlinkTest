@@ -11,3 +11,4 @@ export * from './pointerComponent';
 export * from './pointerLabelComponent';
 export * from './loader';
 export * from './message';
+export * from './networkStatus';

@@ -6,12 +6,13 @@ import DurationChart from './components/durationChart';
 import {palette, ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {useRecoilValue, useRecoilState, useSetRecoilState} from 'recoil';
-import {loadingState, messageState} from './atoms';
+import {loadingState, messageState, coinSelectionState} from './atoms';
 import {fetchCoinList} from './apis';
 import {RefreshControl, StyleSheet} from 'react-native';
 
 const Home = () => {
   const [isLoading, setLoading] = useRecoilState(loadingState);
+  const isCoinSelected = useRecoilValue(coinSelectionState);
   const setErrorMessage = useSetRecoilState(messageState);
   const [refreshing, setRefreshing] = React.useState(false);
 
@@ -56,9 +57,9 @@ const Home = () => {
           />
         }>
         <WalletHeader />
-        <DurationChart />
+        {isCoinSelected ? <DurationChart /> : null}
         <CryptoActivity />
-        {/* <Portfolio /> */}
+        <Portfolio />
       </ScrollView>
     </BottomSheetModalProvider>
   );

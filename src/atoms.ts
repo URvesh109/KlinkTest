@@ -1,5 +1,6 @@
-import {atom} from 'recoil';
+import {atom, AtomEffect} from 'recoil';
 import {MessageType} from '../src/types';
+import {addEventListener} from '@react-native-community/netinfo';
 
 const KEYS = {
   COLLAPSE: 'collaspseKey',
@@ -8,7 +9,23 @@ const KEYS = {
   LOADER: 'loaderKey',
   MESSAGE: 'messageKey',
   COIN_SELECTION: 'coinSelectionKey',
+  NETWORK_STATE: 'networkState',
 };
+
+//---------- ATOM EFFECT----------------
+
+const networkStatusEffect: () => AtomEffect<boolean> =
+  () =>
+  ({setSelf}) => {
+    const unsubscribe = addEventListener(state => {
+      setSelf(state.isConnected as boolean);
+    });
+    return () => {
+      unsubscribe();
+    };
+  };
+
+//---------- ATOM----------------
 
 export const collapseState = atom<boolean>({
   key: KEYS.COLLAPSE,
@@ -38,4 +55,10 @@ export const messageState = atom<MessageType>({
 export const coinSelectionState = atom<string>({
   key: KEYS.COIN_SELECTION,
   default: '',
+});
+
+export const networkState = atom<boolean>({
+  key: KEYS.NETWORK_STATE,
+  default: true,
+  effects: [networkStatusEffect()],
 });
