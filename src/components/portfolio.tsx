@@ -5,12 +5,17 @@ import {Switch} from './switch';
 import {scale} from 'react-native-size-matters';
 import {Icons} from '../assets';
 import {CoinFlatList} from './coinFlatList';
-import BottomDrawer, {BottomDrawerPresentHandle} from './bottomDrawer';
+import BottomDrawer, {BottomDrawerHandle} from './bottomDrawer';
 
 const {SortAscendingIcon} = Icons;
 
 export const Portfolio = () => {
-  const bottomDrawerRef = React.useRef<BottomDrawerPresentHandle>(null);
+  const bottomDrawerRef = React.useRef<BottomDrawerHandle>(null);
+
+  const onPress = React.useCallback(() => {
+    bottomDrawerRef.current?.present();
+  }, []);
+
   return (
     <Box marginHorizontal="l" marginVertical="xl">
       <Text color="white" variant="header">
@@ -22,7 +27,7 @@ export const Portfolio = () => {
         flexDirection="row"
         alignItems="center">
         <Switch />
-        <Pressable onPress={() => bottomDrawerRef.current?.present()}>
+        <Pressable onPress={onPress}>
           <Box
             height={scale(32)}
             width={scale(60)}
@@ -37,7 +42,7 @@ export const Portfolio = () => {
         </Pressable>
       </Box>
       <CoinFlatList />
-      <BottomDrawer selected="fun" ref={bottomDrawerRef} />
+      <BottomDrawer ref={bottomDrawerRef} />
     </Box>
   );
 };
