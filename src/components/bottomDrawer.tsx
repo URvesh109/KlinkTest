@@ -11,7 +11,6 @@ import {SortByFlatList} from './sortByFlatList';
 
 export type BottomDrawerHandle = {
   present: () => void;
-  dismiss: () => void;
 };
 
 const BottomDrawer: ForwardRefRenderFunction<
@@ -26,12 +25,13 @@ const BottomDrawer: ForwardRefRenderFunction<
     console.log('handleSheetChanges', index);
   }, []);
 
+  const onClose = () => {
+    bottomSheetModalRef.current?.close();
+  };
+
   React.useImperativeHandle(forwardedRef, () => ({
     present: () => {
       bottomSheetModalRef.current?.present();
-    },
-    dismiss: () => {
-      bottomSheetModalRef.current?.dismiss();
     },
   }));
 
@@ -41,8 +41,9 @@ const BottomDrawer: ForwardRefRenderFunction<
       index={1}
       onChange={handleSheetChanges}
       backgroundStyle={styles.backgroundStyle}
-      backdropComponent={null}
       handleIndicatorStyle={styles.handleIndicatorStyle}
+      stackBehavior="replace"
+      enableDismissOnClose
       snapPoints={snapPoints}>
       <BottomSheetView>
         <Box alignItems="center" marginTop={'m'}>
@@ -50,7 +51,7 @@ const BottomDrawer: ForwardRefRenderFunction<
             Sort by
           </Text>
         </Box>
-        <SortByFlatList />
+        <SortByFlatList onClose={onClose} />
       </BottomSheetView>
     </BottomSheetModal>
   );

@@ -4,7 +4,6 @@ import {SortItem} from './sortItem';
 import {Box} from '../theme';
 import {sortSelectionState} from '../atoms';
 import {useRecoilState} from 'recoil';
-import BottomDrawer, {BottomDrawerHandle} from './bottomDrawer';
 
 export type Sortkey = 'Value' | 'A-Z' | 'Z-A';
 export type SortIcons = 'ListNumIcon' | 'DoubleSideArrowIcon';
@@ -20,16 +19,20 @@ const data: Array<SortDataProps> = [
   {iconName: 'DoubleSideArrowIcon', label: 'Z-A'},
 ];
 
-export const SortByFlatList = () => {
+type SortByFlatListProps = {
+  onClose: () => void;
+};
+
+export const SortByFlatList = (props: SortByFlatListProps) => {
+  const {onClose} = props;
   const [selectedSort, setSortSelection] = useRecoilState(sortSelectionState);
-  const bottomDrawerRef = React.useRef<BottomDrawerHandle>(null);
 
   const onPress = React.useCallback(
     (item: Sortkey) => {
       setSortSelection(item);
-      bottomDrawerRef.current?.dismiss();
+      onClose();
     },
-    [setSortSelection],
+    [setSortSelection, onClose],
   );
 
   const itemSeparator = React.useCallback(() => {
@@ -59,7 +62,6 @@ export const SortByFlatList = () => {
 
   return (
     <>
-      <BottomDrawer ref={bottomDrawerRef} />
       <FlatList
         data={data}
         renderItem={renderItem}
