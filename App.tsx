@@ -6,6 +6,7 @@ import Home from './src/homeScreen';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
 import {palette} from './src/theme';
+import {Loader} from './src/components';
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
         <SafeAreaView style={styles.container}>
           <ThemeProvider theme={theme}>
             <StatusBar barStyle={'light-content'} />
-            <Home />
+            <Loader>
+              <Home />
+            </Loader>
           </ThemeProvider>
         </SafeAreaView>
       </GestureHandlerRootView>

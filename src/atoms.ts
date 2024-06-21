@@ -4,6 +4,7 @@ const KEYS = {
   COLLAPSE: 'collaspseKey',
   DURATION_BTN: 'durationBtnKey',
   POINTER_DATE: 'pointerDateKey',
+  LOADER: 'loaderKey',
 };
 
 export const collapseState = atom<boolean>({
@@ -19,4 +20,9 @@ export const durationBtnState = atom<string>({
 export const pointerDateState = atom<string>({
   key: KEYS.POINTER_DATE,
   default: '',
+});
+
+export const loadingState = atom<boolean>({
+  key: KEYS.LOADER,
+  default: false,
 });

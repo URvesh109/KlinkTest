@@ -5,12 +5,20 @@ import WalletHeader from './components/walletHeader';
 import DurationChart from './components/durationChart';
 import {ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {useRecoilValue, useRecoilState} from 'recoil';
+import {loadingState} from './atoms';
 // import {fetchCoinList} from './apis';
 
 const Home = () => {
+  const [isLoading, setLoading] = useRecoilState(loadingState);
+
   React.useEffect(() => {
     async function fetch() {
       try {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
         // await fetchCoinList();
       } catch (error) {
         console.log('Error');

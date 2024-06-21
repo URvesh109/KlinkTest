@@ -9,3 +9,4 @@ export * from './chart';
 export * from './pointerDate';
 export * from './pointerComponent';
 export * from './pointerLabelComponent';
+export * from './loader';
