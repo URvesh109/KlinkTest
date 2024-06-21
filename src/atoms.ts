@@ -7,6 +7,7 @@ const KEYS = {
   POINTER_DATE: 'pointerDateKey',
   LOADER: 'loaderKey',
   MESSAGE: 'messageKey',
+  COIN_SELECTION: 'coinSelectionKey',
 };
 
 export const collapseState = atom<boolean>({
@@ -32,4 +33,9 @@ export const loadingState = atom<boolean>({
 export const messageState = atom<MessageType>({
   key: KEYS.MESSAGE,
   default: {visible: false, info: '', type: null},
+});
+
+export const coinSelectionState = atom<string>({
+  key: KEYS.COIN_SELECTION,
+  default: '',
 });

@@ -3,8 +3,8 @@ import {FlatList} from 'react-native';
 import {CoinItem} from './coinItem';
 import {coinIds} from '../apis';
 import {CoinIdsType} from '../types';
-import {useRecoilValue} from 'recoil';
-import {collapseState} from '../atoms';
+import {useRecoilValue, useSetRecoilState} from 'recoil';
+import {collapseState, coinSelectionState} from '../atoms';
 import {Box, Text} from '../theme';
 
 const EmptyComponent = () => {
@@ -17,11 +17,27 @@ const EmptyComponent = () => {
 
 export const CoinFlatList = () => {
   const isCollapse = useRecoilValue(collapseState);
+  const setCoinSelection = useSetRecoilState(coinSelectionState);
+
+  const onPress = React.useCallback(
+    (item: string) => {
+      setCoinSelection(item);
+    },
+    [setCoinSelection],
+  );
+
   const renderItem = React.useCallback(
     ({item}: {item: CoinIdsType}) => {
-      return <CoinItem key={item} coinId={item} status={isCollapse} />;
+      return (
+        <CoinItem
+          onPress={onPress}
+          key={item}
+          coinId={item}
+          status={isCollapse}
+        />
+      );
     },
-    [isCollapse],
+    [isCollapse, onPress],
   );
 
   return (

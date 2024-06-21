@@ -11,11 +11,15 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 
-type ItemProps = {coinId: CoinIdsType; status: boolean};
+type ItemProps = {
+  coinId: CoinIdsType;
+  status: boolean;
+  onPress: (item: string) => void;
+};
 
 export const CoinItem = (props: ItemProps) => {
-  const {status} = props;
-  const data = coinNames[props.coinId];
+  const {status, coinId} = props;
+  const data = coinNames[coinId];
   const window = useWindowDimensions();
 
   const animatedStyles = useAnimatedStyle(() => {
@@ -32,8 +36,12 @@ export const CoinItem = (props: ItemProps) => {
     };
   }, [status]);
 
+  const onPress = () => {
+    props.onPress(coinId as string);
+  };
+
   return (
-    <Pressable onPress={() => console.log('On list item press')}>
+    <Pressable onPress={onPress}>
       <Box
         marginTop="xl"
         borderWidth={1}
