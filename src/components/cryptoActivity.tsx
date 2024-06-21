@@ -3,13 +3,24 @@ import {Pressable, useWindowDimensions} from 'react-native';
 import {Box} from '../theme';
 import {Icons} from '../assets';
 import {scale} from 'react-native-size-matters';
+import {useSetRecoilState} from 'recoil';
+import {messageState} from '../atoms';
 
 const {BuyIcon, DepositIcon, SwapIcon, WithdrawIcon} = Icons;
 
 const CryptoActivity = () => {
   const window = useWindowDimensions();
+  const setMessage = useSetRecoilState(messageState);
 
   const customWidth = window.width / 5;
+
+  const onPress = () => {
+    setMessage({
+      visible: true,
+      info: 'Coming soon!',
+      type: 'success',
+    });
+  };
 
   return (
     <Box
@@ -17,16 +28,16 @@ const CryptoActivity = () => {
       marginTop="xl"
       flexDirection="row"
       justifyContent="space-between">
-      <Pressable onPress={() => console.log('Buy')}>
+      <Pressable onPress={onPress}>
         <BuyIcon height={scale(40)} width={customWidth} />
       </Pressable>
-      <Pressable onPress={() => console.log('deposit')}>
+      <Pressable onPress={onPress}>
         <DepositIcon height={scale(40)} width={customWidth} />
       </Pressable>
-      <Pressable onPress={() => console.log('Swap')}>
+      <Pressable onPress={onPress}>
         <SwapIcon height={scale(40)} width={customWidth} />
       </Pressable>
-      <Pressable onPress={() => console.log('Withdraw')}>
+      <Pressable onPress={onPress}>
         <WithdrawIcon height={scale(40)} width={customWidth} />
       </Pressable>
     </Box>
