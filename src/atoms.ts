@@ -1,6 +1,7 @@
-import {atom, AtomEffect} from 'recoil';
+import {atom, AtomEffect, selector} from 'recoil';
 import {CoinData, MessageType} from '../src/types';
 import {addEventListener} from '@react-native-community/netinfo';
+import {Sortkey} from './components';
 
 const KEYS = {
   COLLAPSE: 'collaspseKey',
@@ -9,8 +10,10 @@ const KEYS = {
   LOADER: 'loaderKey',
   MESSAGE: 'messageKey',
   COIN_SELECTION: 'coinSelectionKey',
-  NETWORK_STATE: 'networkState',
-  COIN_LIST: 'coinList',
+  NETWORK_STATE: 'networkStateKey',
+  COIN_LIST: 'coinListKey',
+  SORT_SELECTION: 'sortSelection',
+  SORTED_COIN_LIST: 'sortedCoinList',
 };
 
 //---------- ATOM EFFECT----------------
@@ -67,4 +70,39 @@ export const networkState = atom<boolean>({
 export const coinListState = atom<Array<CoinData>>({
   key: KEYS.COIN_LIST,
   default: [],
+});
+
+export const sortSelectionState = atom<Sortkey>({
+  key: KEYS.SORT_SELECTION,
+  default: 'Value',
+});
+
+export const sortedCoinListState = selector({
+  key: KEYS.SORTED_COIN_LIST,
+  get: ({get}) => {
+    const sort = get(sortSelectionState);
+    const old = get(coinListState) || [];
+    const newCoinList = [...old];
+
+    switch (sort) {
+      case 'Value':
+        return newCoinList.sort(
+          (item_a, item_b) => item_b.current_price - item_a.current_price,
+        );
+      case 'A-Z':
+        return newCoinList.sort(
+          (item_a, item_b) =>
+            item_a.name.toUpperCase().charCodeAt(0) -
+            item_b.name.toUpperCase().charCodeAt(0),
+        );
+      case 'Z-A':
+        return newCoinList.sort(
+          (item_a, item_b) =>
+            item_b.name.toUpperCase().charCodeAt(0) -
+            item_a.name.toUpperCase().charCodeAt(0),
+        );
+      default:
+        return [];
+    }
+  },
 });
