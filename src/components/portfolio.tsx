@@ -13,6 +13,7 @@ export const Portfolio = () => {
   const bottomDrawerRef = React.useRef<BottomDrawerHandle>(null);
 
   const onPress = React.useCallback(() => {
+    console.log('ONpress for present called');
     bottomDrawerRef.current?.present();
   }, []);
 

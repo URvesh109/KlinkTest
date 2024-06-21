@@ -9,17 +9,14 @@ import {scale} from 'react-native-size-matters';
 import {Box, palette, Text} from '../theme';
 import {SortByFlatList} from './sortByFlatList';
 
-export type BottomDrawerPresentHandle = {
+export type BottomDrawerHandle = {
   present: () => void;
-};
-
-type BottomDrawerProps = PropsWithChildren & {
-  selected: string;
+  dismiss: () => void;
 };
 
 const BottomDrawer: ForwardRefRenderFunction<
-  BottomDrawerPresentHandle,
-  BottomDrawerProps
+  BottomDrawerHandle,
+  PropsWithChildren
 > = (props, forwardedRef) => {
   const bottomSheetModalRef = React.useRef<BottomSheetModal>(null);
 
@@ -33,6 +30,9 @@ const BottomDrawer: ForwardRefRenderFunction<
     present: () => {
       bottomSheetModalRef.current?.present();
     },
+    dismiss: () => {
+      bottomSheetModalRef.current?.dismiss();
+    },
   }));
 
   return (
@@ -40,10 +40,8 @@ const BottomDrawer: ForwardRefRenderFunction<
       ref={bottomSheetModalRef}
       index={1}
       onChange={handleSheetChanges}
-      enablePanDownToClose
       backgroundStyle={styles.backgroundStyle}
       backdropComponent={null}
-      stackBehavior="replace"
       handleIndicatorStyle={styles.handleIndicatorStyle}
       snapPoints={snapPoints}>
       <BottomSheetView>
