@@ -1,5 +1,5 @@
 import {atom, AtomEffect} from 'recoil';
-import {MessageType} from '../src/types';
+import {CoinData, MessageType} from '../src/types';
 import {addEventListener} from '@react-native-community/netinfo';
 
 const KEYS = {
@@ -10,6 +10,7 @@ const KEYS = {
   MESSAGE: 'messageKey',
   COIN_SELECTION: 'coinSelectionKey',
   NETWORK_STATE: 'networkState',
+  COIN_LIST: 'coinList',
 };
 
 //---------- ATOM EFFECT----------------
@@ -61,4 +62,9 @@ export const networkState = atom<boolean>({
   key: KEYS.NETWORK_STATE,
   default: true,
   effects: [networkStatusEffect()],
+});
+
+export const coinListState = atom<Array<CoinData>>({
+  key: KEYS.COIN_LIST,
+  default: [],
 });

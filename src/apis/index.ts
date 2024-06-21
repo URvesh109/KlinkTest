@@ -32,6 +32,7 @@ const api = create({
 export const fetchCoinList = async (): Promise<Array<CoinData>> => {
   try {
     const {data} = await api.get(endPoints.coinMarkets);
+    console.log('FetchList called');
     return data as Array<CoinData>;
   } catch (error) {
     return Promise.reject(error);

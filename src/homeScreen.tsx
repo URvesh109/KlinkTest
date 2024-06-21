@@ -5,44 +5,52 @@ import WalletHeader from './components/walletHeader';
 import DurationChart from './components/durationChart';
 import {palette, ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import {useRecoilValue, useRecoilState, useSetRecoilState} from 'recoil';
-import {loadingState, messageState, coinSelectionState} from './atoms';
+import {useRecoilValue, useSetRecoilState} from 'recoil';
+import {
+  loadingState,
+  messageState,
+  coinSelectionState,
+  coinListState,
+} from './atoms';
 import {fetchCoinList} from './apis';
 import {RefreshControl, StyleSheet} from 'react-native';
 
 const Home = () => {
-  const [isLoading, setLoading] = useRecoilState(loadingState);
+  const setLoading = useSetRecoilState(loadingState);
   const isCoinSelected = useRecoilValue(coinSelectionState);
   const setErrorMessage = useSetRecoilState(messageState);
   const [refreshing, setRefreshing] = React.useState(false);
+  const setCoinList = useSetRecoilState(coinListState);
 
-  const onRefresh = () => {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 4000);
-  };
+  const onRefresh = React.useCallback(() => {
+    async function fetch() {
+      try {
+        setRefreshing(true);
+        const data = await fetchCoinList();
+        setCoinList(data);
+      } catch (error) {
+        setErrorMessage({type: 'error', info: String(error), visible: true});
+      } finally {
+        setRefreshing(false);
+      }
+    }
+    fetch();
+  }, [setCoinList, setRefreshing, setErrorMessage]);
 
   React.useEffect(() => {
     async function fetch() {
       try {
-        // setErrorMessage({
-        //   visible: true,
-        //   info: 'Something went wrong!',
-        //   type: 'error',
-        // });
-        // setLoading(true);
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 3000);
-        // const data = await fetchCoinList();
-        // data.forEach(item => console.log('ids', item.id));
+        setLoading(true);
+        const data = await fetchCoinList();
+        setCoinList(data);
       } catch (error) {
-        console.log('Error');
+        setErrorMessage({type: 'error', info: String(error), visible: true});
+      } finally {
+        setLoading(false);
       }
     }
     fetch();
-  }, []);
+  }, [setLoading, setCoinList, setErrorMessage]);
 
   return (
     <BottomSheetModalProvider>
