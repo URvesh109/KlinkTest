@@ -2,17 +2,15 @@ import React from 'react';
 import {Box, Text} from '../theme';
 import {scale} from 'react-native-size-matters';
 import {Pressable, useWindowDimensions} from 'react-native';
-import {useRecoilValue} from 'recoil';
-import {durationBtnState} from '../atoms';
 
 type DurationBtnProps = {
   label: string;
   onPress: (item: string) => void;
+  selectedBtn: string;
 };
 
-const DurationBtn: React.FC<DurationBtnProps> = props => {
-  const selectedBtn = useRecoilValue(durationBtnState);
-  const {label, onPress} = props;
+export const DurationBtn: React.FC<DurationBtnProps> = props => {
+  const {label, onPress, selectedBtn} = props;
   const window = useWindowDimensions();
   const customWidth = window.width / 7.8;
 
@@ -22,7 +20,7 @@ const DurationBtn: React.FC<DurationBtnProps> = props => {
   const onItemPress = () => {
     onPress(label);
   };
-
+  console.log('label selected', label, selectedBtn);
   return (
     <Pressable onPress={onItemPress}>
       <Box
@@ -41,5 +39,3 @@ const DurationBtn: React.FC<DurationBtnProps> = props => {
     </Pressable>
   );
 };
-
-export default React.memo(DurationBtn);

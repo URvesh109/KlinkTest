@@ -1,17 +1,21 @@
 import React from 'react';
-import DurationBtn from './durationBtn';
+import {DurationBtn} from './durationBtn';
 import {Box} from '../theme';
-import {useSetRecoilState} from 'recoil';
+import {useRecoilState} from 'recoil';
 import {durationBtnState} from '../atoms';
 
 const btnList = ['1D', '1W', '1M', '3M', '1Y', 'All'];
 
 export const DurationBtnList = () => {
-  const setDurationBtn = useSetRecoilState(durationBtnState);
+  const [selectedBtn, setDurationBtn] = useRecoilState(durationBtnState);
 
-  const onPress = (item: string) => {
-    setDurationBtn(item);
-  };
+  const onPress = React.useCallback(
+    (item: string) => {
+      console.log('Pressed');
+      setDurationBtn(item);
+    },
+    [setDurationBtn],
+  );
 
   return (
     <Box
@@ -20,7 +24,12 @@ export const DurationBtnList = () => {
       marginTop="l"
       marginHorizontal="l">
       {btnList.map(item => (
-        <DurationBtn key={item} label={item} onPress={onPress} />
+        <DurationBtn
+          key={item}
+          label={item}
+          onPress={onPress}
+          selectedBtn={selectedBtn}
+        />
       ))}
     </Box>
   );
