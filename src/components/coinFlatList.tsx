@@ -5,6 +5,15 @@ import {coinIds} from '../apis';
 import {CoinIdsType} from '../types';
 import {useRecoilValue} from 'recoil';
 import {collapseState} from '../atoms';
+import {Box, Text} from '../theme';
+
+const EmptyComponent = () => {
+  return (
+    <Box justifyContent="center" alignItems="center" marginTop="xxl">
+      <Text color="disabledBulletColor"> No data</Text>
+    </Box>
+  );
+};
 
 export const CoinFlatList = () => {
   const isCollapse = useRecoilValue(collapseState);
@@ -21,6 +30,7 @@ export const CoinFlatList = () => {
       renderItem={renderItem}
       keyExtractor={item => item}
       scrollEnabled={false}
+      ListEmptyComponent={EmptyComponent}
     />
   );
 };
