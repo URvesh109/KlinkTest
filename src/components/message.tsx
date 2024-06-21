@@ -7,7 +7,7 @@ import {messageState} from '../atoms';
 const messageViewStyle: ViewStyle = {
   position: 'absolute',
   width: '100%',
-  height: '100%',
+  height: '110%',
   zIndex: 100,
 };
 
