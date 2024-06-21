@@ -1,10 +1,9 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import {CoinItem} from './coinItem';
-import {coinIds} from '../apis';
-import {CoinIdsType} from '../types';
+import {CoinData} from '../types';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
-import {collapseState, coinSelectionState} from '../atoms';
+import {collapseState, coinSelectionState, sortedCoinListState} from '../atoms';
 import {Box, Text} from '../theme';
 
 const EmptyComponent = () => {
@@ -17,6 +16,7 @@ const EmptyComponent = () => {
 
 export const CoinFlatList = () => {
   const isCollapse = useRecoilValue(collapseState);
+  const sortedCoinList = useRecoilValue(sortedCoinListState);
   const setCoinSelection = useSetRecoilState(coinSelectionState);
 
   const onPress = React.useCallback(
@@ -27,12 +27,12 @@ export const CoinFlatList = () => {
   );
 
   const renderItem = React.useCallback(
-    ({item}: {item: CoinIdsType}) => {
+    ({item}: {item: CoinData}) => {
       return (
         <CoinItem
           onPress={onPress}
-          key={item}
-          coinId={item}
+          key={item.id}
+          coinData={item}
           status={isCollapse}
         />
       );
@@ -42,9 +42,8 @@ export const CoinFlatList = () => {
 
   return (
     <FlatList
-      data={coinIds}
+      data={sortedCoinList}
       renderItem={renderItem}
-      keyExtractor={item => item}
       scrollEnabled={false}
       ListEmptyComponent={EmptyComponent}
     />

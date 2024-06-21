@@ -3,23 +3,24 @@ import {useWindowDimensions} from 'react-native';
 import {Box, Text, CoinIcon, IconName, marginLeft} from '../theme';
 import {Pressable} from 'react-native';
 import {scale} from 'react-native-size-matters';
-import {CoinIdsType, coinNames} from '../types';
+import {CoinData, CoinIdsType, coinNames} from '../types';
 import {Chart} from './chart';
 import Animated, {
   useAnimatedStyle,
   withTiming,
   Easing,
 } from 'react-native-reanimated';
+import {lineDataItem} from 'react-native-gifted-charts';
 
 type ItemProps = {
-  coinId: CoinIdsType;
+  coinData: CoinData;
   status: boolean;
   onPress: (item: string) => void;
 };
 
 export const CoinItem = (props: ItemProps) => {
-  const {status, coinId} = props;
-  const data = coinNames[coinId];
+  const {status, coinData} = props;
+  const data = coinNames[coinData.id as CoinIdsType];
   const window = useWindowDimensions();
 
   const animatedStyles = useAnimatedStyle(() => {
@@ -37,8 +38,18 @@ export const CoinItem = (props: ItemProps) => {
   }, [status]);
 
   const onPress = () => {
-    props.onPress(coinId as string);
+    props.onPress(coinData.id);
   };
+
+  let sparklineData: Array<lineDataItem> = React.useMemo(() => {
+    return coinData.sparkline_in_7d.price.map(item => {
+      return {
+        value: item,
+      };
+    });
+  }, [coinData]);
+
+  // console.log('Sparkline', sparklineData.length, coinData.name, sparklineData);
 
   return (
     <Pressable onPress={onPress}>
@@ -58,7 +69,7 @@ export const CoinItem = (props: ItemProps) => {
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center">
-            <CoinIcon iconName={props.coinId as IconName} />
+            <CoinIcon iconName={coinData.id as IconName} />
             <Box paddingLeft="m" width={scale(100)}>
               <Text
                 color="white"
@@ -78,16 +89,18 @@ export const CoinItem = (props: ItemProps) => {
               color="white"
               variant={'coinTitle'}
               ellipsizeMode={'tail'}>
-              $ 423424.23423
+              {'$' + coinData.current_price}
             </Text>
           </Box>
         </Box>
         <Animated.View style={[animatedStyles, marginLeft]} key={'sparkline'}>
           <Chart
+            data={sparklineData}
             color={data.color}
             startFillColor={data.startFillColor}
             endFillColor={data.endFillColor}
             height={scale(80)}
+            yAxisOffset={coinData.atl}
           />
         </Animated.View>
       </Box>
