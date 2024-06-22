@@ -10,14 +10,14 @@ import {Chart} from './chart';
 import {scale} from 'react-native-size-matters';
 import {ActivityIndicator, useWindowDimensions} from 'react-native';
 import {lineDataItem} from 'react-native-gifted-charts';
-import {bitcoinMarketChartState, bitcoinChartIndicator} from '../atoms';
+import {bitcoinMarketChartState, bitcoinChartIndicatorState} from '../atoms';
 import {fingNewSparklineRange} from '../utils';
 
 const DurationChart = () => {
   const data = coinNames.bitcoin;
   const width = useWindowDimensions().width + 30;
   const bitcoinMarketChart = useRecoilValue(bitcoinMarketChartState);
-  const isLoading = useRecoilValue(bitcoinChartIndicator);
+  const isLoading = useRecoilValue(bitcoinChartIndicatorState);
 
   const renderPointerComponent = () => (
     <PointerComponent backgroundColor={data.color} />

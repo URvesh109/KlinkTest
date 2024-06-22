@@ -37,6 +37,9 @@ export const PointerLabelComponent: React.FC<any> = props => {
 
   React.useLayoutEffect(() => {
     setPointerDate(date);
+    return () => {
+      setPointerDate('');
+    };
   }, [date, setPointerDate]);
 
   return (
