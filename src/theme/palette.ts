@@ -19,4 +19,5 @@ export const palette = {
   bottomBarColor: '#1E1D1D',
   disabledBulletColor: '#4A4948',
   loaderIndicatorColor: 'rgba(0, 0, 0, 0.85)',
+  lightBackgroundIndicator: 'rgba(0, 0, 0, 0.7)',
 };

@@ -27,6 +27,7 @@ export const theme = createTheme({
     bottomBarColor: palette.bottomBarColor,
     disabledBulletColor: palette.disabledBulletColor,
     loaderIndicatorColor: palette.loaderIndicatorColor,
+    lightBackgroundIndicator: palette.lightBackgroundIndicator,
   },
   spacing: {
     vs: scale(3),

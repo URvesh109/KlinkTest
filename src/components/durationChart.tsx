@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, marginLeft} from '../theme';
+import {Box, loadingViewStyle, marginLeft, palette} from '../theme';
 import {PointerDate} from './pointerDate';
 import {DurationBtnList} from './durationBtnList';
 import {PointerComponent} from './pointerComponent';
@@ -8,7 +8,7 @@ import {coinNames} from '../types';
 
 import {Chart} from './chart';
 import {scale} from 'react-native-size-matters';
-import {useWindowDimensions} from 'react-native';
+import {ActivityIndicator, useWindowDimensions} from 'react-native';
 import {lineDataItem} from 'react-native-gifted-charts';
 
 const DurationChart = () => {
@@ -54,6 +54,13 @@ const DurationChart = () => {
         />
       </Box>
       <DurationBtnList />
+      <Box
+        backgroundColor="lightBackgroundIndicator"
+        style={[loadingViewStyle]}>
+        <Box flex={1} justifyContent="center" alignItems="center">
+          <ActivityIndicator size={'large'} color={palette.lightWhite} />
+        </Box>
+      </Box>
     </Box>
   );
 };
