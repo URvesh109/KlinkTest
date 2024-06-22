@@ -10,7 +10,11 @@ export const Text = (props: TextProps) => {
   const {children, style: styleOverride, ...rest} = props;
 
   return (
-    <RnText allowFontScaling={false} {...rest} style={styleOverride}>
+    <RnText
+      maxFontSizeMultiplier={1.2}
+      allowFontScaling={false}
+      {...rest}
+      style={styleOverride}>
       {children}
     </RnText>
   );
