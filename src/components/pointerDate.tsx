@@ -7,9 +7,17 @@ import {pointerDateState} from '../atoms';
 
 const {UpArrowIcon, InverArrowIcon} = Icons;
 
-export const PointerDate = () => {
-  const [positive, setPositive] = React.useState(true);
+type PointerDate = {
+  low: number;
+  high: number;
+};
+
+export const PointerDate: React.FC<PointerDate> = props => {
+  const {high, low} = props;
   const date = useRecoilValue(pointerDateState);
+
+  const percentage = ((high - low) * 100) / low;
+  const positive = percentage >= 0;
 
   const color = positive ? 'green' : 'dotColor';
 
@@ -25,7 +33,7 @@ export const PointerDate = () => {
         />
       )}
       <Text variant="body" color={color}>
-        12%
+        {percentage.toFixed(2)}
       </Text>
       {date ? (
         <Text variant="coinBody" paddingLeft="sm">

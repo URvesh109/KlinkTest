@@ -5,6 +5,12 @@ export interface Sparkline {
   price: Array<number>;
 }
 
+export interface MarketChart {
+  prices: Array<Array<number>>;
+  market_caps: Array<Array<number>>;
+  total_volumes: Array<Array<number>>;
+}
+
 export interface CoinData {
   id: string;
   symbol: string;

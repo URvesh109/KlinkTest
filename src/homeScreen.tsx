@@ -6,8 +6,13 @@ import DurationChart from './components/durationChart';
 import {palette, ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {useSetRecoilState} from 'recoil';
-import {loadingState, messageState, coinListState} from './atoms';
-import {fetchCoinList} from './apis';
+import {
+  loadingState,
+  messageState,
+  coinListState,
+  bitcoinMarketChartState,
+} from './atoms';
+import {fetchBitcoinChart, fetchCoinList} from './apis';
 import {RefreshControl, StyleSheet} from 'react-native';
 
 const Home = () => {
@@ -15,6 +20,7 @@ const Home = () => {
   const setErrorMessage = useSetRecoilState(messageState);
   const [refreshing, setRefreshing] = React.useState(false);
   const setCoinList = useSetRecoilState(coinListState);
+  const setBitcoinMarketChart = useSetRecoilState(bitcoinMarketChartState);
 
   const onRefresh = React.useCallback(() => {
     async function fetch() {
@@ -37,6 +43,8 @@ const Home = () => {
         setLoading(true);
         const data = await fetchCoinList();
         setCoinList(data);
+        const bitcoinMarketData = await fetchBitcoinChart({});
+        setBitcoinMarketChart(bitcoinMarketData);
       } catch (error) {
         setErrorMessage({type: 'error', info: String(error), visible: true});
       } finally {
@@ -44,7 +52,7 @@ const Home = () => {
       }
     }
     fetch();
-  }, [setLoading, setCoinList, setErrorMessage]);
+  }, [setLoading, setCoinList, setErrorMessage, setBitcoinMarketChart]);
 
   return (
     <BottomSheetModalProvider>

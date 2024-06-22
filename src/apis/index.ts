@@ -1,5 +1,6 @@
 import {create} from 'apisauce';
-import {CoinData} from '../types';
+import {CoinData, MarketChart} from '../types';
+import dayjs from 'dayjs';
 
 const BASE_URL = 'https://api.coingecko.com/api/v3';
 
@@ -18,6 +19,7 @@ const IDS = coinIds.join();
 
 const endPoints = {
   coinMarkets: `/coins/markets?ids=${IDS}&vs_currency=usd&sparkline=true&precision=2`,
+  marketChart: '/coins/bitcoin/market_chart/range?vs_currency=usd&',
 };
 
 const api = create({
@@ -34,6 +36,24 @@ export const fetchCoinList = async (): Promise<Array<CoinData>> => {
     const {data} = await api.get(endPoints.coinMarkets);
     console.log('FetchList called');
     return data as Array<CoinData>;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const fetchBitcoinChart = async ({
+  from = dayjs().subtract(30, 'day').unix(),
+  to = dayjs().unix(),
+}: {
+  from?: number;
+  to?: number;
+}): Promise<MarketChart> => {
+  try {
+    const {data} = await api.get(
+      endPoints.marketChart + `from=${from}&to=${to}&precision=0`,
+    );
+    console.log('Fetch Market chart called');
+    return data as MarketChart;
   } catch (error) {
     return Promise.reject(error);
   }

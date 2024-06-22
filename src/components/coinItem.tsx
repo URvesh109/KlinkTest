@@ -100,7 +100,6 @@ export const CoinItem = (props: ItemProps) => {
           yAxisOffset={result.yAxisOffset || 1}
           stepValue={result.stepValue || 1}
           noOfSections={result.noOfSections || 1}
-          roundToDigits={3}
         />
       </Animated.View>
     </Box>

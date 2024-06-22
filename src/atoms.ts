@@ -1,5 +1,5 @@
 import {atom, AtomEffect, selector} from 'recoil';
-import {CoinData, MessageType} from '../src/types';
+import {CoinData, MarketChart, MessageType} from '../src/types';
 import {addEventListener} from '@react-native-community/netinfo';
 import {Sortkey} from './components';
 
@@ -13,6 +13,8 @@ const KEYS = {
   COIN_LIST: 'coinListKey',
   SORT_SELECTION: 'sortSelection',
   SORTED_COIN_LIST: 'sortedCoinList',
+  BITCOIN_MARKET_CHART: 'bitcoinMarketChart',
+  BITCOIN_CHART_INDICATOR: 'bitcoinChartIndicator',
 };
 
 //---------- ATOM EFFECT----------------
@@ -69,6 +71,16 @@ export const coinListState = atom<Array<CoinData>>({
 export const sortSelectionState = atom<Sortkey>({
   key: KEYS.SORT_SELECTION,
   default: 'Value',
+});
+
+export const bitcoinMarketChartState = atom<MarketChart>({
+  key: KEYS.BITCOIN_MARKET_CHART,
+  default: {prices: [], market_caps: [], total_volumes: []},
+});
+
+export const bitcoinChartIndicator = atom<boolean>({
+  key: KEYS.BITCOIN_CHART_INDICATOR,
+  default: false,
 });
 
 export const sortedCoinListState = selector({
