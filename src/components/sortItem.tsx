@@ -20,38 +20,54 @@ const icons = {
   DoubleSideArrowIcon: Icons.DoubleSideArrowIcon,
 };
 
-export const SortItem: React.FC<SorItemProps> = props => {
-  const {iconName, label, selected, onSelect} = props;
+export const SortItem: React.FC<SorItemProps> = React.memo(
+  props => {
+    const {iconName, label, selected, onSelect} = props;
 
-  const Icon: React.FC<SvgProps> = icons[`${iconName}`];
+    const Icon: React.FC<SvgProps> = icons[`${iconName}`];
 
-  const SelectIcon: React.FC<SvgProps> =
-    selected === label ? CheckedIcon : UncheckedIcon;
+    const SelectIcon: React.FC<SvgProps> =
+      selected === label ? CheckedIcon : UncheckedIcon;
 
-  const onPress = () => {
-    onSelect(label as Sortkey);
-  };
+    const onPress = () => {
+      onSelect(label as Sortkey);
+    };
 
-  return (
-    <Pressable onPress={onPress}>
-      <Box
-        paddingHorizontal="l"
-        height={scale(60)}
-        width={'100%'}
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center">
+    return (
+      <Pressable onPress={onPress}>
         <Box
+          paddingHorizontal="l"
+          height={scale(60)}
+          width={'100%'}
           flexDirection="row"
           justifyContent="space-between"
           alignItems="center">
-          <Icon width={scale(24)} height={scale(24)} />
-          <Text color="white" paddingLeft="m" variant={'sortTitle'}>
-            {label}
-          </Text>
+          <Box
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center">
+            <Icon width={scale(24)} height={scale(24)} />
+            <Text color="white" paddingLeft="m" variant={'sortTitle'}>
+              {label}
+            </Text>
+          </Box>
+          <SelectIcon width={scale(24)} height={scale(24)} />
         </Box>
-        <SelectIcon width={scale(24)} height={scale(24)} />
-      </Box>
-    </Pressable>
-  );
-};
+      </Pressable>
+    );
+  },
+  (prevProps, nextProps) => {
+    /**
+     * Only re-render for the prev selected item and the current selected item.
+     * So the list will render only two times.
+     */
+    if (
+      prevProps.selected === prevProps.label ||
+      nextProps.selected === nextProps.label
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+);
