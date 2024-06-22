@@ -8,14 +8,14 @@ import {pointerDateState} from '../atoms';
 
 const pointerContainerStyle: ViewStyle = {
   height: scale(21),
-  width: scale(42),
+  width: scale(50),
   justifyContent: 'center',
-  marginTop: scale(5),
+  marginTop: scale(-5),
   marginLeft: scale(-50),
 };
 
 const pointerLabelStyle: ViewStyle = {
-  paddingHorizontal: scale(8),
+  paddingHorizontal: scale(4),
   paddingVertical: scale(4),
   borderRadius: scale(40),
 };
@@ -31,7 +31,7 @@ export const PointerLabelComponent: React.FC<any> = props => {
   let value = '';
   let date = '';
   if (items.length) {
-    value = items[0].value;
+    value = Number(items[0].value).toFixed();
     date = dayjs(items[0].date).format('ddd, MMM DD, HH:MM');
   }
 

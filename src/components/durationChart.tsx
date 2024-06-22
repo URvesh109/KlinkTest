@@ -10,7 +10,11 @@ import {Chart} from './chart';
 import {scale} from 'react-native-size-matters';
 import {ActivityIndicator, useWindowDimensions} from 'react-native';
 import {lineDataItem} from 'react-native-gifted-charts';
-import {bitcoinMarketChartState, bitcoinChartIndicatorState} from '../atoms';
+import {
+  bitcoinMarketChartState,
+  bitcoinChartIndicatorState,
+  coinListState,
+} from '../atoms';
 import {fingNewSparklineRange} from '../utils';
 
 const DurationChart = () => {
@@ -18,6 +22,9 @@ const DurationChart = () => {
   const width = useWindowDimensions().width + 30;
   const bitcoinMarketChart = useRecoilValue(bitcoinMarketChartState);
   const isLoading = useRecoilValue(bitcoinChartIndicatorState);
+  const coinList = useRecoilValue(coinListState);
+
+  const bitcoinData = coinList.find(item => item.id === 'bitcoin');
 
   const renderPointerComponent = () => (
     <PointerComponent backgroundColor={data.color} />
@@ -45,7 +52,12 @@ const DurationChart = () => {
 
   return (
     <Box marginTop="xl">
-      <PointerDate low={low} high={high} />
+      {bitcoinData?.current_price ? (
+        <PointerDate
+          lastPrice={sparklineData[0].value}
+          currentPrice={bitcoinData?.current_price}
+        />
+      ) : null}
       <Box style={marginLeft} marginTop="xl" width={width} height={scale(140)}>
         <Chart
           data={sparklineData}

@@ -8,15 +8,15 @@ import {pointerDateState} from '../atoms';
 const {UpArrowIcon, InverArrowIcon} = Icons;
 
 type PointerDate = {
-  low: number;
-  high: number;
+  lastPrice: number;
+  currentPrice: number;
 };
 
 export const PointerDate: React.FC<PointerDate> = props => {
-  const {high, low} = props;
+  const {currentPrice, lastPrice} = props;
   const date = useRecoilValue(pointerDateState);
 
-  const percentage = ((high - low) * 100) / low;
+  const percentage = ((currentPrice - lastPrice) * 100) / currentPrice;
   const positive = percentage >= 0;
 
   const color = positive ? 'green' : 'dotColor';
