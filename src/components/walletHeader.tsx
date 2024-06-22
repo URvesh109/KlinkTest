@@ -4,6 +4,8 @@ import {Box, Text} from '../theme';
 import {Icons} from '../assets';
 import {scale} from 'react-native-size-matters';
 import {getBalance} from '../utils';
+import {useSetRecoilState} from 'recoil';
+import {messageState} from '../atoms';
 
 const {BellIcon} = Icons;
 
@@ -11,12 +13,20 @@ const WalletHeader = () => {
   const splitBalance = getBalance(11212.113);
   const [decimalView, setDecimalView] = React.useState(true);
   const window = useWindowDimensions();
+  const setMessageState = useSetRecoilState(messageState);
+
+  const onPress = () => {
+    setMessageState({
+      visible: true,
+      info: 'Coming soon!',
+      type: 'success',
+    });
+  };
 
   /**
    * Logic to hide display decimal point if the balance text width is more than
    * mobile device screen size.
    */
-
   const onLayoutchange = React.useCallback(
     (e: LayoutChangeEvent) => {
       const layoutWidth = e.nativeEvent.layout.width;
@@ -37,7 +47,7 @@ const WalletHeader = () => {
         flexDirection="row"
         justifyContent="space-between">
         <Text variant="header">Wallet Balance</Text>
-        <Pressable onPress={() => console.log('On notification pressed')}>
+        <Pressable onPress={onPress}>
           <Box
             flexDirection="row"
             alignItems="center"

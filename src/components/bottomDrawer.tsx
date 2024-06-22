@@ -21,10 +21,6 @@ const BottomDrawer: ForwardRefRenderFunction<
 
   const snapPoints = React.useMemo(() => ['1%', '40%'], []);
 
-  const handleSheetChanges = React.useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
-  }, []);
-
   const onClose = () => {
     bottomSheetModalRef.current?.close();
   };
@@ -39,7 +35,6 @@ const BottomDrawer: ForwardRefRenderFunction<
     <BottomSheetModal
       ref={bottomSheetModalRef}
       index={1}
-      onChange={handleSheetChanges}
       backgroundStyle={styles.backgroundStyle}
       handleIndicatorStyle={styles.handleIndicatorStyle}
       stackBehavior="replace"

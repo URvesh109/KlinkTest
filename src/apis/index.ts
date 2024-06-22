@@ -34,7 +34,6 @@ const api = create({
 export const fetchCoinList = async (): Promise<Array<CoinData>> => {
   try {
     const {data} = await api.get(endPoints.coinMarkets);
-    console.log('FetchList called');
     return data as Array<CoinData>;
   } catch (error) {
     return Promise.reject(error);
@@ -42,29 +41,17 @@ export const fetchCoinList = async (): Promise<Array<CoinData>> => {
 };
 
 export const fetchBitcoinChart = async ({
-  from = dayjs().subtract(30, 'day').unix(),
-  to = dayjs().unix(),
+  from = dayjs().subtract(3, 'M').unix(),
 }: {
   from?: number;
-  to?: number;
 }): Promise<MarketChart> => {
   try {
+    const to = dayjs().unix();
     const {data} = await api.get(
       endPoints.marketChart + `from=${from}&to=${to}&precision=0`,
     );
-    console.log('Fetch Market chart called');
     return data as MarketChart;
   } catch (error) {
     return Promise.reject(error);
   }
 };
-
-// const url =
-//   'https://api.coingecko.com/api/v3/coins/solana/market_chart/range?vs_currency=usd&from=1718691270&to=1718777670&precision=0';
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     accept: 'application/json',
-//     'x-cg-demo-api-key': 'CG-sdVFeajmkhPcN3RbUT7RKsjN',
-//   },
-// };

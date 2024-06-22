@@ -41,10 +41,10 @@ const Home = () => {
     async function fetch() {
       try {
         setLoading(true);
-        const data = await fetchCoinList();
-        setCoinList(data);
         const bitcoinMarketData = await fetchBitcoinChart({});
         setBitcoinMarketChart(bitcoinMarketData);
+        const data = await fetchCoinList();
+        setCoinList(data);
       } catch (error) {
         setErrorMessage({type: 'error', info: String(error), visible: true});
       } finally {
