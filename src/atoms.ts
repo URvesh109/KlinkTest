@@ -78,7 +78,7 @@ export const bitcoinMarketChartState = atom<MarketChart>({
   default: {prices: [], market_caps: [], total_volumes: []},
 });
 
-export const bitcoinChartIndicator = atom<boolean>({
+export const bitcoinChartIndicatorState = atom<boolean>({
   key: KEYS.BITCOIN_CHART_INDICATOR,
   default: false,
 });
