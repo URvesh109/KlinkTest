@@ -7,3 +7,10 @@ import {ViewStyle} from 'react-native';
 export const marginLeft: ViewStyle = {
   marginLeft: -30,
 };
+
+export const loadingViewStyle: ViewStyle = {
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  zIndex: 100,
+};

@@ -1,16 +1,9 @@
 import * as React from 'react';
 import {ViewStyle, ActivityIndicator} from 'react-native';
-import {Text, Box, palette} from '../theme';
+import {Text, Box, palette, loadingViewStyle} from '../theme';
 import {useRecoilValue} from 'recoil';
 import {loadingState} from '../atoms';
 import {scale} from 'react-native-size-matters';
-
-const loadingViewStyle: ViewStyle = {
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  zIndex: 100,
-};
 
 const indicatorbar: ViewStyle = {
   height: scale(70),
