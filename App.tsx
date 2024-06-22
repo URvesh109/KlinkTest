@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, StatusBar, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  StatusBar,
+  SafeAreaView,
+  Platform,
+  UIManager,
+} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {RecoilRoot, useRecoilValue} from 'recoil';
 import Home from './src/homeScreen';
@@ -13,6 +19,13 @@ import Animated, {
   withTiming,
   Easing,
 } from 'react-native-reanimated';
+
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const NetworBarAnimation = () => {
   const [networkBar, setNetworkBar] = React.useState(false);

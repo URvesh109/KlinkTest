@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet, LayoutAnimation} from 'react-native';
 import {SortItem} from './sortItem';
 import {Box} from '../theme';
 import {sortSelectionState} from '../atoms';
@@ -29,6 +29,7 @@ export const SortByFlatList = (props: SortByFlatListProps) => {
 
   const onPress = React.useCallback(
     (item: Sortkey) => {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
       setSortSelection(item);
       onClose();
     },
