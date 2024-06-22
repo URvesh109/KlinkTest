@@ -9,7 +9,6 @@ const KEYS = {
   POINTER_DATE: 'pointerDateKey',
   LOADER: 'loaderKey',
   MESSAGE: 'messageKey',
-  COIN_SELECTION: 'coinSelectionKey',
   NETWORK_STATE: 'networkStateKey',
   COIN_LIST: 'coinListKey',
   SORT_SELECTION: 'sortSelection',
@@ -54,11 +53,6 @@ export const loadingState = atom<boolean>({
 export const messageState = atom<MessageType>({
   key: KEYS.MESSAGE,
   default: {visible: false, info: '', type: null},
-});
-
-export const coinSelectionState = atom<string>({
-  key: KEYS.COIN_SELECTION,
-  default: '',
 });
 
 export const networkState = atom<boolean>({
