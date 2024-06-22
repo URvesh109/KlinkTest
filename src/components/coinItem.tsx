@@ -11,6 +11,7 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 import {lineDataItem} from 'react-native-gifted-charts';
+import {fingNewSparklineRange} from '../utils';
 
 type ItemProps = {
   coinData: CoinData;
@@ -41,6 +42,9 @@ export const CoinItem = (props: ItemProps) => {
     props.onPress(coinData.id);
   };
 
+  let high_7d = Math.max(...coinData.sparkline_in_7d.price);
+  let low_7d = Math.min(...coinData.sparkline_in_7d.price);
+
   let sparklineData: Array<lineDataItem> = React.useMemo(() => {
     return coinData.sparkline_in_7d.price.map(item => {
       return {
@@ -49,7 +53,7 @@ export const CoinItem = (props: ItemProps) => {
     });
   }, [coinData]);
 
-  // console.log('Sparkline', sparklineData.length, coinData.name, sparklineData);
+  const result = fingNewSparklineRange({low: low_7d, high: high_7d});
 
   return (
     <Pressable onPress={onPress}>
@@ -100,7 +104,10 @@ export const CoinItem = (props: ItemProps) => {
             startFillColor={data.startFillColor}
             endFillColor={data.endFillColor}
             height={scale(80)}
-            yAxisOffset={coinData.atl}
+            yAxisOffset={result.yAxisOffset || 1}
+            stepValue={result.stepValue || 1}
+            noOfSections={result.noOfSections || 1}
+            roundToDigits={3}
           />
         </Animated.View>
       </Box>
