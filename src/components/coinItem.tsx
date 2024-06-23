@@ -1,6 +1,6 @@
 import React from 'react';
-import {useWindowDimensions} from 'react-native';
-import {Box, Text, CoinIcon, IconName, marginLeft} from '../theme';
+import {useWindowDimensions, TextStyle} from 'react-native';
+import {Box, Text, CoinIcon, IconName, marginLeft, palette} from '../theme';
 import {scale} from 'react-native-size-matters';
 import {CoinData, CoinIdsType, coinNames} from '../types';
 import {Chart} from './chart';
@@ -11,6 +11,14 @@ import Animated, {
 } from 'react-native-reanimated';
 import {lineDataItem} from 'react-native-gifted-charts';
 import {fingNewSparklineRange} from '../utils';
+import {Fonts} from '../assets';
+
+const coinBody: TextStyle = {
+  fontWeight: 400,
+  fontSize: scale(12),
+  lineHeight: scale(16),
+  fontFamily: Fonts.Regular,
+};
 
 type ItemProps = {
   coinData: CoinData;
@@ -33,6 +41,20 @@ export const CoinItem = (props: ItemProps) => {
         easing: Easing.linear,
       }),
       width: window.width,
+    };
+  }, [status]);
+
+  const animatedTextStyles = useAnimatedStyle(() => {
+    return {
+      opacity: withTiming(!status ? 1 : 0, {
+        duration: 300,
+        easing: Easing.linear,
+      }),
+      color: palette.grey,
+      height: withTiming(!status ? 16 : 0, {
+        duration: 400,
+        easing: Easing.linear,
+      }),
     };
   }, [status]);
 
@@ -75,9 +97,9 @@ export const CoinItem = (props: ItemProps) => {
               ellipsizeMode="tail">
               {data.expandTitle}
             </Text>
-            <Text color="grey" variant="coinBody">
+            <Animated.Text style={[animatedTextStyles, coinBody]}>
               {data.expandDesc}
-            </Text>
+            </Animated.Text>
           </Box>
         </Box>
         <Box width={scale(127)} alignItems="flex-end">
