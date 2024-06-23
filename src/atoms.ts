@@ -93,7 +93,7 @@ export const sortedCoinListState = selector({
     switch (sort) {
       case 'Value':
         return newCoinList.sort(
-          (item_a, item_b) => item_b.current_price - item_a.current_price,
+          (item_a, item_b) => item_a.current_price - item_b.current_price,
         );
       case 'A-Z':
         return newCoinList.sort(
