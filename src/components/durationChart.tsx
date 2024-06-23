@@ -67,7 +67,6 @@ const DurationChart = () => {
           height={scale(140)}
           thickness={2}
           width={width}
-          adjustToWidth
           yAxisOffset={result.yAxisOffset || 1}
           stepValue={result.stepValue || 1}
           noOfSections={result.noOfSections || 1}

@@ -96,7 +96,7 @@ export const CoinItem = (props: ItemProps) => {
           color={data.color}
           startFillColor={data.startFillColor}
           endFillColor={data.endFillColor}
-          height={scale(80)}
+          height={80}
           yAxisOffset={result.yAxisOffset || 1}
           stepValue={result.stepValue || 1}
           noOfSections={result.noOfSections || 1}

@@ -17,7 +17,6 @@ export const Chart: React.FC<LineChartPropsType> = props => {
       adjustToWidth
       onlyPositive
       roundToDigits={3}
-      overflowBottom={-10}
       {...rest}
     />
   );
