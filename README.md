@@ -1,7 +1,9 @@
 Case Study: Interactive Cryptocurrency Dashboard with Coingecko API
 
 ### Output
-![iPhone 15 Pro Max](https://github.com/URvesh109/KlinkTest/assets/26654227/b339c52c-2656-4915-b80e-bdbdafd8b0bd)
+
+https://github.com/URvesh109/KlinkTest/assets/26654227/ee9e9ea7-7ca0-4ebc-a40b-112ddf1c9b5d
+
 
 
 ## Requirements
