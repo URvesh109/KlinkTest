@@ -28,6 +28,8 @@ const Home = () => {
         setRefreshing(true);
         const data = await fetchCoinList();
         setCoinList(data);
+        const bitcoinMarketData = await fetchBitcoinChart({});
+        setBitcoinMarketChart(bitcoinMarketData);
       } catch (error) {
         setErrorMessage({type: 'error', info: String(error), visible: true});
       } finally {
@@ -35,7 +37,7 @@ const Home = () => {
       }
     }
     fetch();
-  }, [setCoinList, setRefreshing, setErrorMessage]);
+  }, [setCoinList, setRefreshing, setErrorMessage, setBitcoinMarketChart]);
 
   React.useEffect(() => {
     async function fetch() {

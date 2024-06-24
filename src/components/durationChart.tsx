@@ -24,7 +24,7 @@ const DurationChart = () => {
   const isLoading = useRecoilValue(bitcoinChartIndicatorState);
   const coinList = useRecoilValue(coinListState);
 
-  const bitcoinData = coinList.find(item => item.id === 'bitcoin');
+  const bitcoinData = coinList?.find(item => item.id === 'bitcoin');
 
   const renderPointerComponent = () => (
     <PointerComponent backgroundColor={data.color} />
@@ -34,13 +34,13 @@ const DurationChart = () => {
     <PointerLabelComponent items={items} />
   );
 
-  let prices = bitcoinMarketChart.prices.map(item => item[1]);
+  let prices = bitcoinMarketChart?.prices.map(item => item[1]) || [];
 
   let high = Math.max(...prices);
   let low = Math.min(...prices);
 
   let sparklineData: Array<lineDataItem> = React.useMemo(() => {
-    return bitcoinMarketChart.prices.map(item => {
+    return bitcoinMarketChart?.prices.map(item => {
       return {
         value: item[1],
         date: item[0],
@@ -52,7 +52,7 @@ const DurationChart = () => {
 
   return (
     <Box marginTop="xl">
-      {bitcoinData?.current_price ? (
+      {sparklineData && bitcoinData?.current_price ? (
         <PointerDate
           lastPrice={sparklineData[0].value}
           currentPrice={bitcoinData?.current_price}
