@@ -1,3 +1,5 @@
+import {ManipulateType} from 'dayjs';
+
 export const getBalance = (balance: number): Array<string> => {
   let data = balance.toFixed(2).split('.');
   return data;
@@ -24,4 +26,13 @@ export const fingNewSparklineRange = ({
     stepValue: diff,
     noOfSections: findSection,
   };
+};
+
+export const extractNumAndUnitType = (
+  label: string,
+): {num: number; unitType: ManipulateType} => {
+  let num = Number(label.charAt(0));
+  let validate = label.charAt(1).toLowerCase();
+  let unitType = validate === 'm' ? 'M' : (validate as ManipulateType);
+  return {num, unitType};
 };
