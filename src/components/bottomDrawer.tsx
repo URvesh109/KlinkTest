@@ -19,7 +19,7 @@ const BottomDrawer: ForwardRefRenderFunction<
 > = (props, forwardedRef) => {
   const bottomSheetModalRef = React.useRef<BottomSheetModal>(null);
 
-  const snapPoints = React.useMemo(() => ['1%', '40%'], []);
+  const snapPoints = React.useMemo(() => ['20%', '40%'], []);
 
   const onClose = () => {
     bottomSheetModalRef.current?.close();
