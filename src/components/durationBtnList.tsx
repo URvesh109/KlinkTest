@@ -10,6 +10,7 @@ import {
 } from '../atoms';
 import {fetchBitcoinChart} from '../apis';
 import dayjs from 'dayjs';
+import {extractNumAndUnitType} from '../utils';
 
 const btnList = ['1D', '1W', '1M', '3M', '1Y', 'All'];
 
@@ -24,10 +25,7 @@ export const DurationBtnList = () => {
     (label: string) => {
       async function fetchChart() {
         try {
-          let num = Number(label.charAt(0));
-          let validate = label.charAt(1).toLowerCase();
-          let unitType =
-            validate === 'm' ? 'M' : (validate as dayjs.ManipulateType);
+          const {num, unitType} = extractNumAndUnitType(label);
           setIndicator(true);
           const data = await fetchBitcoinChart({
             from: dayjs().subtract(num, unitType).unix(),
