@@ -5,15 +5,18 @@ import WalletHeader from './components/walletHeader';
 import DurationChart from './components/durationChart';
 import {palette, ScrollView} from './theme';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import {useSetRecoilState} from 'recoil';
+import {useRecoilValue, useSetRecoilState} from 'recoil';
 import {
   loadingState,
   messageState,
   coinListState,
   bitcoinMarketChartState,
+  durationBtnState,
 } from './atoms';
 import {fetchBitcoinChart, fetchCoinList} from './apis';
 import {RefreshControl, StyleSheet} from 'react-native';
+import {extractNumAndUnitType} from './utils';
+import dayjs from 'dayjs';
 
 const Home = () => {
   const setLoading = useSetRecoilState(loadingState);
@@ -21,6 +24,7 @@ const Home = () => {
   const [refreshing, setRefreshing] = React.useState(false);
   const setCoinList = useSetRecoilState(coinListState);
   const setBitcoinMarketChart = useSetRecoilState(bitcoinMarketChartState);
+  const durationBtn = useRecoilValue(durationBtnState);
 
   const onRefresh = React.useCallback(() => {
     async function fetch() {
@@ -28,7 +32,10 @@ const Home = () => {
         setRefreshing(true);
         const data = await fetchCoinList();
         setCoinList(data);
-        const bitcoinMarketData = await fetchBitcoinChart({});
+        const {unitType, num} = extractNumAndUnitType(durationBtn);
+        const bitcoinMarketData = await fetchBitcoinChart({
+          from: dayjs().subtract(num, unitType).unix(),
+        });
         setBitcoinMarketChart(bitcoinMarketData);
       } catch (error) {
         setErrorMessage({type: 'error', info: String(error), visible: true});
@@ -37,7 +44,13 @@ const Home = () => {
       }
     }
     fetch();
-  }, [setCoinList, setRefreshing, setErrorMessage, setBitcoinMarketChart]);
+  }, [
+    setCoinList,
+    setRefreshing,
+    setErrorMessage,
+    setBitcoinMarketChart,
+    durationBtn,
+  ]);
 
   React.useEffect(() => {
     async function fetch() {
