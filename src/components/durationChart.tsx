@@ -15,7 +15,7 @@ import {
   bitcoinChartIndicatorState,
   coinListState,
 } from '../atoms';
-import {fingNewSparklineRange} from '../utils';
+import {findNewSparklineRange} from '../utils';
 
 const DurationChart = () => {
   const data = coinNames.bitcoin;
@@ -48,7 +48,7 @@ const DurationChart = () => {
     });
   }, [bitcoinMarketChart]);
 
-  const result = fingNewSparklineRange({low, high});
+  const result = findNewSparklineRange({low, high});
 
   return (
     <Box marginTop="xl">

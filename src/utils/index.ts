@@ -5,7 +5,7 @@ export const getBalance = (balance: number): Array<string> => {
   return data;
 };
 
-export const fingNewSparklineRange = ({
+export const findNewSparklineRange = ({
   low,
   high,
 }: {

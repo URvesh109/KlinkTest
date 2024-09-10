@@ -10,7 +10,7 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 import {lineDataItem} from 'react-native-gifted-charts';
-import {fingNewSparklineRange} from '../utils';
+import {findNewSparklineRange} from '../utils';
 import {Fonts} from '../assets';
 
 const coinBody: TextStyle = {
@@ -69,7 +69,7 @@ export const CoinItem = (props: ItemProps) => {
     });
   }, [coinData]);
 
-  const result = fingNewSparklineRange({low: low_7d, high: high_7d});
+  const result = findNewSparklineRange({low: low_7d, high: high_7d});
 
   return (
     <Box
